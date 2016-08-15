@@ -393,3 +393,4 @@ typings
 ### TypeScript ###
 ## Ignore generated JS
 *.js
+*.js.map
