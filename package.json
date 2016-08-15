@@ -1,36 +1,50 @@
 {
   "name": "xitickets-frontend",
   "version": "0.0.0",
+  "description": "Open source theater ticketing and seating chart application",
   "author": {
     "name": "Jared Bates",
     "email": "me@jaredbates.net",
     "url": "https://jaredbates.net"
   },
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/computerwizjared/TheatreTickets.git"
   },
   "scripts": {
-    "start": "concurrent \"npm run tsc:w\" \"npm run lite\" ",    
+    "start": "concurrent \"npm run tsc:w\" \"npm run lite\" \"npm run sass:w\"",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "lite": "lite-server",
     "typings": "typings",
-    "postinstall": "typings install" 
-  },  
-  "license": "MIT",
+    "sass:w": "node node_modules\\node-sass\\bin\\node-sass -w styles -o styles",
+    "postinstall": "typings install"
+  },
   "dependencies": {
-    "angular2": "2.0.0-beta.7",
-    "systemjs": "0.19.22",
-    "es6-promise": "^3.0.2",
-    "es6-shim": "^0.33.3",
-    "reflect-metadata": "0.1.2",
-    "rxjs": "5.0.0-beta.2",
-    "zone.js": "0.5.15"
+    "@angular/common": "2.0.0-rc.5",
+    "@angular/compiler": "2.0.0-rc.5",
+    "@angular/core": "2.0.0-rc.5",
+    "@angular/forms": "0.3.0",
+    "@angular/http": "2.0.0-rc.5",
+    "@angular/platform-browser": "2.0.0-rc.5",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.5",
+    "@angular/router": "3.0.0-rc.1",
+    "@angular/router-deprecated": "2.0.0-rc.2",
+    "@angular/upgrade": "2.0.0-rc.5",
+    "systemjs": "0.19.27",
+    "core-js": "^2.4.0",
+    "reflect-metadata": "^0.1.3",
+    "rxjs": "5.0.0-beta.6",
+    "zone.js": "^0.6.12",
+    "angular2-in-memory-web-api": "0.0.15",
+    "bootstrap": "^3.3.6"
   },
   "devDependencies": {
-    "concurrently": "^2.0.0",
-    "lite-server": "^2.1.0",
-    "typescript": "^1.7.5"
+    "concurrently": "^2.2.0",
+    "lite-server": "^2.2.2",
+    "node-sass": "^3.8.0",
+    "typescript": "^1.8.10",
+    "typings": "^1.3.2"
   }
 }

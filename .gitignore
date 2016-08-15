@@ -394,3 +394,9 @@ typings
 ## Ignore generated JS
 *.js
 *.js.map
+
+### Sass ###
+.sass-cache/
+*.css.map
+# Compiled CSS
+styles/*.css
