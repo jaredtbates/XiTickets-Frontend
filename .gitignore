@@ -393,6 +393,7 @@ typings
 ### TypeScript ###
 ## Ignore generated JS
 *.js
+!*.config.js
 *.js.map
 
 ### Sass ###
