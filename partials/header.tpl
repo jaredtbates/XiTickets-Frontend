@@ -5,18 +5,13 @@
 
     <div class="col-sm-6 col-xs-12">
         <ol class="breadcrumb">
-            <li *ngFor="let page of pages">{{ page }}</li>
+            <li [routerLink]="['/shows']" [routerLinkActive]="['active']">Shows</li>
+            <li [routerLink]="['/seats']" [routerLinkActive]="['active']">Seats</li>
+            <li [routerLink]="['/checkout']" [routerLinkActive]="['active']">Checkout</li>
         </ol>
     </div>
 
     <div class="col-xs-3 hidden-xs">
-        <img src="dist/img/logo.png" alt="Logo" class="img-responsive pull-right">
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-xs-12">
-        <h2>Shows</h2>
-        <h4>Please select the show you would like to see.</h4>
+        <img src="https://placeholdit.imgix.net/~text?txtsize=30&txt=LOGO&w=250&h=80" alt="Logo" class="img-responsive pull-right">
     </div>
 </div>

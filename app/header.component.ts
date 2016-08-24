@@ -4,6 +4,4 @@ import {Component} from '@angular/core';
     selector: 'header',
     templateUrl: 'partials/header.tpl'
 })
-export class HeaderComponent {
-    pages = ['Shows', 'Seats', 'Checkout'];
-}
+export class HeaderComponent { }
