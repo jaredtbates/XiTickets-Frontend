@@ -1,30 +1,34 @@
-import {Component} from '@angular/core';
-import {ShowService} from './show.service';
+import {Component, OnInit} from '@angular/core';
 import {CollapseDirective} from 'ng2-bootstrap/ng2-bootstrap';
+import {ShowService} from './show.service';
 
 @Component({
     selector: 'shows-container',
+    directives: [CollapseDirective],
+    providers: [ShowService],
     templateUrl: 'partials/shows.tpl'
 })
-export class ShowsComponent {
+export class ShowsComponent implements OnInit {
     shows: Show[];
-    public isCollapsed:boolean = false;
+    isCollapsed: boolean = true;
+
+    constructor(private showService: ShowService) { }
+
+    getShows(): void {
+        this.showService.getShows().then(shows => this.shows = shows);
+    }
+    
+    ngOnInit(): void {
+        this.getShows();
+    }
 }
 
 export class Show {
     id: number;
     name: string;
+    description: string;
     date: Date;
     logoUrl: string;
     childCost: number;
     adultCost: number;
-}
-
-@Component({
-    selector: 'show-details',
-    directives: [CollapseDirective],
-    templateUrl: 'partials/show-details.tpl'
-})
-export class ShowDetailsComponent {
-    public isCollapsed: boolean = true;
 }
