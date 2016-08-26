@@ -1,10 +1,11 @@
 import {Component, OnInit} from '@angular/core';
+import {NgClass} from '@angular/common';
 import {CollapseDirective} from 'ng2-bootstrap/ng2-bootstrap';
 import {ShowService} from './show.service';
 
 @Component({
     selector: 'shows-container',
-    directives: [CollapseDirective],
+    directives: [CollapseDirective, NgClass],
     providers: [ShowService],
     templateUrl: 'partials/shows.tpl'
 })
@@ -20,6 +21,10 @@ export class ShowsComponent implements OnInit {
     
     ngOnInit(): void {
         this.getShows();
+    }
+
+    selectShow(event: Event): void {
+        this.isCollapsed = false;
     }
 }
 

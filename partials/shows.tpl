@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row inside-header">
     <div class="col-xs-12">
         <h2>Shows</h2>
         <h4>Please select the show you would like to see.</h4>
@@ -7,9 +7,9 @@
 
 <div class="row">
     <div class="col-sm-4 col-xs-6" *ngFor="let show of shows">
-        <div class="panel panel-default show-selector" (click)="isCollapsed = !isCollapsed">
+        <div class="panel panel-default show-selector" (click)="selectShow($event)">
             <div class="panel-body">
-                <img src="{{show.logoUrl}}" alt="{{show.name}} Logo" class="img-responsive">
+                <img src="{{show.logoUrl}}" alt="{{show.name}} Logo" draggable="false" class="img-responsive">
                 <h3>{{show.name}}</h3>
                 <h5>{{show.description}}</h5>
             </div>
@@ -68,5 +68,3 @@
         </div>
     </div>
 </div>
-
-<!--<show-details></show-details>-->

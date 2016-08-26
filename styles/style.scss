@@ -12,7 +12,7 @@ body {
     overflow-x: hidden;
 }
 
-header {
+.inside-header {
     margin-bottom: 20px;
 }
 
@@ -90,6 +90,11 @@ h5 {
 
 .show-selector > img {
     pointer-events: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 .show-selected {
