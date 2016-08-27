@@ -4,6 +4,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './header.component'
 import {ShowsComponent} from './shows.component';
+import {DatepickerComponent} from './datepicker.component';
 
 import {routing, appRoutingProviders} from './app.routing';
 
@@ -15,7 +16,8 @@ import {routing, appRoutingProviders} from './app.routing';
     declarations: [
         AppComponent,
         HeaderComponent,
-        ShowsComponent
+        ShowsComponent/*,
+        DatepickerComponent*/
     ],
     providers: [
         appRoutingProviders

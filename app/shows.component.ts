@@ -1,12 +1,13 @@
 import {Component, OnInit, Directive, ElementRef, Renderer, HostListener} from '@angular/core';
 import {CollapseDirective} from 'ng2-bootstrap/ng2-bootstrap';
 import {ShowService} from './show.service';
+import {DatepickerComponent} from './datepicker.component';
 
 @Component({
     selector: 'shows-container',
     directives: [CollapseDirective],
     providers: [ShowService],
-    templateUrl: 'partials/shows.tpl'
+    templateUrl: 'partials/shows.html'
 })
 export class ShowsComponent implements OnInit {
     shows: Show[];

@@ -3,7 +3,7 @@ import {ROUTER_DIRECTIVES} from '@angular/router';
 
 @Component({
     selector: 'tickets-app',
-    templateUrl: '/partials/base.tpl',
-    directives: [ROUTER_DIRECTIVES]
+    directives: [ROUTER_DIRECTIVES],
+    templateUrl: '/partials/base.html'
 })
 export class AppComponent { }
