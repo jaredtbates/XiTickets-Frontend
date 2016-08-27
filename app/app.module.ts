@@ -8,8 +8,15 @@ import {ShowsComponent} from './shows.component';
 import {routing, appRoutingProviders} from './app.routing';
 
 @NgModule({
-    imports: [BrowserModule, routing],
-    declarations: [AppComponent, HeaderComponent, ShowsComponent],
+    imports: [
+        BrowserModule,
+        routing
+    ],
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        ShowsComponent
+    ],
     providers: [
         appRoutingProviders
     ],

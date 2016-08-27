@@ -20,7 +20,7 @@ const SHOWS: Show[] = [
         childCost: 8,
         adultCost: 10
     }, {
-        id: 1,
+        id: 2,
         name: 'Example Show 2',
         description: 'This is example show 2.',
         date: new Date('January 2, 2020 00:00:00'),
@@ -28,15 +28,7 @@ const SHOWS: Show[] = [
         childCost: 8,
         adultCost: 10
     }, {
-        id: 1,
-        name: 'Example Show 3',
-        description: 'This is example show 3.',
-        date: new Date('January 3, 2020 00:00:00'),
-        logoUrl: 'http://placeholdit.imgix.net/~text?txtsize=35&txt=EXAMPLE%20SHOW&w=300&h=150',
-        childCost: 8,
-        adultCost: 10
-    }, {
-        id: 1,
+        id: 3,
         name: 'Example Show 3',
         description: 'This is example show 3.',
         date: new Date('January 3, 2020 00:00:00'),

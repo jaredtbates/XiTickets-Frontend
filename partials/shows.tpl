@@ -7,9 +7,9 @@
 
 <div class="row">
     <div class="col-sm-4 col-xs-6" *ngFor="let show of shows">
-        <div class="panel panel-default show-selector" (click)="selectShow($event)">
+        <div class="panel panel-default show-selector" [class.panel-primary]="hovering === show.id" (mouseenter)="hovering = show.id" (mouseleave)="hovering = null" [class.show-selected]="selected === show.id" (click)="onClick(show.id, $event)">
             <div class="panel-body">
-                <img src="{{show.logoUrl}}" alt="{{show.name}} Logo" draggable="false" class="img-responsive">
+                <img src="{{show.logoUrl}}" alt="{{show.name}} Logo" draggable="false" class="img-responsive center-block">
                 <h3>{{show.name}}</h3>
                 <h5>{{show.description}}</h5>
             </div>
@@ -17,7 +17,7 @@
     </div>
 </div>
 
-<div [collapse]="isCollapsed" id="show-details">
+<div [collapse]="isDetailsCollapsed" id="show-details">
     <div class="row">
         <div class="col-sm-6 col-xs-12 col-ls-xs-6">
             <div class="panel panel-default">
