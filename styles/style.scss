@@ -41,6 +41,11 @@ body {
 }
 
 /* Text Sizes */
+p.input-label {
+    font-size: 14px;
+    position: relative;
+    transform: translateY(50%);
+}
 
 h4 {
     font-size: 17.6px;

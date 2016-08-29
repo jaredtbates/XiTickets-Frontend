@@ -17,8 +17,8 @@ export class ShowsComponent implements OnInit {
     shows: Show[];
     isDetailsCollapsed: boolean = true;
     hovering: number = null;
-    selected: number = null;
-
+    
+    @SessionStorage() selectedShow: number = null;
     @SessionStorage() adultTickets: number = 0;
     @SessionStorage() childTickets: number = 0;
 
@@ -35,7 +35,7 @@ export class ShowsComponent implements OnInit {
     onClick(id: number, event: Event): void {
         this.isDetailsCollapsed = false;
 
-        this.selected = id;
+        this.selectedShow = id;
     }
 }
 
