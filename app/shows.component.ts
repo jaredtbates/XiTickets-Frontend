@@ -1,5 +1,9 @@
-import {Component, OnInit, Directive, ElementRef, Renderer, HostListener} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+
 import {CollapseDirective} from 'ng2-bootstrap/ng2-bootstrap';
+
+import {SessionStorage} from "angular2-localstorage/WebStorage";
+
 import {ShowService} from './show.service';
 import {DatepickerComponent} from './datepicker.component';
 
@@ -14,6 +18,9 @@ export class ShowsComponent implements OnInit {
     isDetailsCollapsed: boolean = true;
     hovering: number = null;
     selected: number = null;
+
+    @SessionStorage() adultTickets: number = 0;
+    @SessionStorage() childTickets: number = 0;
 
     constructor(private showService: ShowService) { }
 

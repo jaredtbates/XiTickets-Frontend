@@ -5,6 +5,7 @@ import {AppComponent} from './app.component';
 import {HeaderComponent} from './header.component'
 import {ShowsComponent} from './shows.component';
 import {DatepickerComponent} from './datepicker.component';
+import {SeatsComponent} from './seats.component';
 
 import {routing, appRoutingProviders} from './app.routing';
 
@@ -17,7 +18,8 @@ import {routing, appRoutingProviders} from './app.routing';
         AppComponent,
         HeaderComponent,
         ShowsComponent/*,
-        DatepickerComponent*/
+        DatepickerComponent*/,
+        SeatsComponent
     ],
     providers: [
         appRoutingProviders
