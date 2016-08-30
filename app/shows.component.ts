@@ -43,7 +43,6 @@ export class Show {
     id: number;
     name: string;
     description: string;
-    date: Date;
     logoUrl: string;
     childCost: number;
     adultCost: number;
