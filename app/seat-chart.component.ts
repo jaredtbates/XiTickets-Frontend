@@ -10,6 +10,8 @@ import {SeatService} from './seat.service';
 export class SeatingChartComponent implements OnInit {
     seats: Seat[];
 
+    rows: Seat[][];
+
     constructor(private seatService: SeatService) { }
 
     getSeats(): void {

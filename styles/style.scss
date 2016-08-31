@@ -16,6 +16,15 @@ body {
     margin-bottom: 20px !important;
 }
 
+img {
+    pointer-events: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
 /* Size Utilities */
 
 @media (min-width: 550px) {
@@ -41,6 +50,7 @@ body {
 }
 
 /* Text Sizes */
+
 p.input-label {
     font-size: 14px;
     position: relative;
@@ -92,15 +102,6 @@ h5 {
     text-align: center;
     vertical-align: middle;
     cursor: pointer;
-}
-
-.show-selector > img {
-    pointer-events: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
 }
 
 .show-selected {
