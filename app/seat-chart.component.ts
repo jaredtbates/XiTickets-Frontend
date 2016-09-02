@@ -9,17 +9,25 @@ import {SeatService} from './seat.service';
     templateUrl: 'partials/seat-chart.html'
 })
 export class SeatChartComponent implements OnInit {
-    rows: Row[];
+    rows: Row[] = [];
     
     constructor(private seatService: SeatService) {}
 
     getSeats(): void {
         this.seatService.getSeats().then(seats => {
-            seats.map(seat => {
-                if (this.rows[seat.row] == null) {
-                    this.rows[seat.row] = [];
+            seats.forEach(seat => {
+                let containingRow: Row;
+
+                this.rows.forEach(row => {
+                    if (row.id === seat.row) {
+                        containingRow = row;
+                        row.seats.push(seat);
+                    }
+                });
+
+                if (containingRow == null) {
+                    this.rows.push(new Row(seat.row, [seat]));
                 }
-                this.rows[seat.row].push(seat);
             });
             console.log(this.rows);
         });
@@ -31,6 +39,5 @@ export class SeatChartComponent implements OnInit {
 }
 
 class Row {
-    id: string;
-    seats: Seat[];
+    constructor(public id: string, public seats: Seat[]) {}
 }

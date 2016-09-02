@@ -120,7 +120,7 @@ h5 {
     margin-bottom: 20px;
 }
 
-.seatCharts-cell {
+.seat {
     float: left;
     text-align: center;
     outline: none;
@@ -133,7 +133,7 @@ h5 {
 }
 
 @media (min-width: 750px) {
-    .seatCharts-cell {
+    .seat {
         height: 14px;
         width: 14px;
         border-radius: 5px;
@@ -142,7 +142,7 @@ h5 {
 }
 
 @media (min-width: 992px) {
-    .seatCharts-cell {
+    .seat {
         height: 16px;
         width: 16px;
         border-radius: 6px;
@@ -151,7 +151,7 @@ h5 {
 }
 
 @media (min-width: 1200px) {
-    .seatCharts-cell {
+    .seat {
         height: 20px;
         width: 20px;
         border-radius: 7px;
@@ -159,7 +159,7 @@ h5 {
     }
 }
 
-.seatCharts-seat {
+.seat {
     background-color: #5cb85c;
     color: white;
     cursor: pointer;
