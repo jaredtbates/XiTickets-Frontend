@@ -9,6 +9,7 @@ import {HeaderComponent} from './header.component'
 import {ShowsComponent} from './shows.component';
 import {DatepickerComponent} from './datepicker.component';
 import {SeatsComponent} from './seats.component';
+import {SeatChartComponent} from './seat-chart.component';
 
 @NgModule({
     imports: [
@@ -21,7 +22,8 @@ import {SeatsComponent} from './seats.component';
         HeaderComponent,
         ShowsComponent/*,
         DatepickerComponent*/,
-        SeatsComponent
+        SeatsComponent,
+        SeatChartComponent
     ],
     providers: [
         appRoutingProviders
