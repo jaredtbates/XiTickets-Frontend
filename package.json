@@ -10,7 +10,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/computerwizjared/TheatreTickets.git"
+    "url": "https://github.com/XiTickets/Frontend.git"
   },
   "scripts": {
     "start": "concurrent \"npm run tsc:w\" \"npm run lite\" \"npm run sass:w\"",
