@@ -19,8 +19,7 @@ import {SeatChartComponent} from './seat-chart.component';
         BrowserModule,
         FormsModule,
         routing,
-        Ng2BootstrapModule,
-        CollapseModule
+        Ng2BootstrapModule
     ],
     declarations: [
         AppComponent,
