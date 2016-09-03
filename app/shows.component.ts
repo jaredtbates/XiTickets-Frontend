@@ -1,7 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 
-import {CollapseDirective} from 'ng2-bootstrap/ng2-bootstrap';
-
 import {SessionStorage} from 'angular2-localstorage/WebStorage';
 
 import {ShowService} from './show.service';
@@ -9,7 +7,6 @@ import {DatepickerComponent} from './datepicker.component';
 
 @Component({
     selector: 'shows-container',
-    directives: [CollapseDirective],
     providers: [ShowService],
     templateUrl: 'partials/shows.html'
 })

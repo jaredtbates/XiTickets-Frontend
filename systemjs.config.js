@@ -1,7 +1,3 @@
-/**
- * System configuration for Angular 2 samples
- * Adjust as necessary for your application needs.
- */
 (function (global) {
   // map tells the System loader where to look for things
   var map = {
@@ -10,14 +6,16 @@
     'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
     'rxjs': 'node_modules/rxjs',
     'moment': 'node_modules/moment/moment.js',
-    'angular2-localstorage': 'node_modules/angular2-localstorage'
+    'angular2-localstorage': 'node_modules/angular2-localstorage',
+    'ng2-bootstrap': 'node_modules/ng2-bootstrap'
   };
   // packages tells the System loader how to load when no filename and/or no extension
   var packages = {
     'app': { main: 'main.js', defaultExtension: 'js' },
     'rxjs': { defaultExtension: 'js' },
     'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
-    'angular2-localstorage': { main: 'index.js', defaultExtension: 'js' }
+    'angular2-localstorage': { main: 'index.js', defaultExtension: 'js' },
+    'ng2-bootstrap': { defaultExtension: 'js' }
   };
   var ngPackageNames = [
     'common',
