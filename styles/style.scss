@@ -1,3 +1,9 @@
+/* Variables */
+$seat-selected-color: #5bc0de;
+$seat-focused-color: #449d44;
+$seat-available-color: #5cb85c;
+$seat-unavailable-color: red;
+
 /*
    GENERAL STYLES
 */
@@ -121,7 +127,7 @@ h5 {
 }
 
 .seat {
-    float: left;
+    display: inline-block;
     text-align: center;
     outline: none;
     font-size: 0;
@@ -165,46 +171,38 @@ h5 {
     cursor: pointer;
 }
 
-.seatCharts-seat:focus {
+.seat-seat:focus {
     border: none;
 }
 
-.seatCharts-space {
+.seat-space {
     background-color: white;
 }
 
-.seatCharts-row {
+.seat-row {
     height: 25px;
+    text-align: center;
 }
 
-.seatCharts-row:after {
+.seat-row:after {
     clear: both;
 }
 
-.seatCharts-seat.selected {
-    background-color: #5bc0de;
+.seat.selected {
+    background-color: $seat-selected-color;
 }
 
-.seatCharts-seat.focused {
-    background-color: #449d44;
+.seat.focused {
+    background-color: $seat-focused-color;
 }
 
-.seatCharts-seat.available {
-    background-color: #5cb85c;
+.seat.available {
+    background-color: $seat-available-color;
 }
 
-.seatCharts-seat.unavailable {
-    background-color: red;
+.seat.unavailable {
+    background-color: $seat-unavailable-color;
     cursor: not-allowed;
-}
-
-.seatCharts-legendList {
-    list-style: none;
-}
-
-.seatCharts-legendItem {
-    margin-top: 10px;
-    line-height: 2;
 }
 
 #stage-box {
@@ -213,6 +211,7 @@ h5 {
     border: 10px solid;
     border-top: 10px;
     border-radius: 0 0 90px 90px;
+    margin-bottom: 10px;
 
     h1 {
         font-weight: 900;
