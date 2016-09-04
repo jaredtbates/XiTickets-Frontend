@@ -1,4 +1,8 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+
+import {SessionStorage} from 'angular2-localstorage/WebStorage';
+
+import {EventService} from './event.service';
 
 import * as moment from 'moment';
 
@@ -6,18 +10,25 @@ import * as moment from 'moment';
     selector: 'show-datepicker',
     template: '<datepicker [(ngModel)]="date" [minDate]="minDate" [showWeeks]="false" [onlyCurrentMonth]="true"></datepicker>'
 })
-export class DatepickerComponent {
-    public date: Date = new Date();
-    public minDate: Date = void 0;
+export class DatepickerComponent implements OnInit {
+    @SessionStorage() date: Date;
+    events: Event[];
 
-    public constructor() {
-        this.events = [
-            { date: this.tomorrow, status: 'full' },
-            { date: this.afterTomorrow, status: 'partially' }
-        ];
+    public constructor(private eventService: EventService) {}
+
+    getEvents(): void {
+        this.eventService.getEvents().then(retrievedEvents => {
+            this.events = retrievedEvents;
+        });
     }
 
-    public getDate(): number {
-        return this.date && this.date.getTime() || new Date().getTime();
+    ngOnInit(): void {
+        this.getEvents();
     }
+}
+
+export class Event {
+    id: number;
+    showid: number;
+    date: Date;
 }

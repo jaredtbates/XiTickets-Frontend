@@ -6,17 +6,16 @@ import {ShowService} from './show.service';
 import {EventService} from './event.service';
 import {DatepickerComponent} from './datepicker.component';
 
-export let shows: Show[];
-
 @Component({
     selector: 'shows-container',
-    providers: [ShowService],
+    providers: [ShowService, EventService],
     templateUrl: 'partials/shows.html'
 })
 export class ShowsComponent implements OnInit {
     isDetailsCollapsed: boolean = true;
     hovering: number = null;
-    dates: Array<any>;
+    shows: Show[];
+    events: Array<any>;
     
     @SessionStorage() selectedShow: number = null;
     @SessionStorage() adultTickets: number = 0;
@@ -26,15 +25,8 @@ export class ShowsComponent implements OnInit {
 
     getShows(): void {
         this.showService.getShows().then(retrievedShows => {
-            shows = retrievedShows;
-            shows.forEach(show => {
-                this.dates.push({date: show});
-            });
+            this.shows = retrievedShows;
         });
-    }
-
-    getEvents(): void {
-        this.
     }
     
     ngOnInit(): void {
@@ -55,10 +47,4 @@ export class Show {
     logoUrl: string;
     childCost: number;
     adultCost: number;
-}
-
-export class Event {
-    id: number;
-    show: Show;
-    date: Date;
 }

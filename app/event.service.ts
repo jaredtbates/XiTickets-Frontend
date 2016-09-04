@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
 
-import {Event, shows} from './shows.component';
+import {Event} from './datepicker.component';
 
 @Injectable()
 export class EventService {
-    getShows(): Promise<Date[]> {
+    getEvents(): Promise<Event[]> {
         return Promise.resolve(EVENTS);
     }
 }
@@ -13,20 +13,15 @@ export class EventService {
 const EVENTS: Event[] = [
     {
         id: 1,
-        show: 
+        showid: 1,
+        date: new Date(2017, 12, 1, 7, 0, 0, 0)
     }, {
         id: 2,
-        name: 'Example Show 2',
-        description: 'This is example show 2.',
-        logoUrl: 'http://placeholdit.imgix.net/~text?txtsize=35&txt=EXAMPLE%20SHOW&w=300&h=150',
-        childCost: 8,
-        adultCost: 10
+        showid: 2,
+        date: new Date(2017, 12, 2, 7, 0, 0, 0)
     }, {
         id: 3,
-        name: 'Example Show 3',
-        description: 'This is example show 3.',
-        logoUrl: 'http://placeholdit.imgix.net/~text?txtsize=35&txt=EXAMPLE%20SHOW&w=300&h=150',
-        childCost: 8,
-        adultCost: 10
+        showid: 3,
+        date: new Date(2017, 12, 3, 7, 0, 0, 0)
     }
 ];
