@@ -28,8 +28,11 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                        <show-datepicker></show-datepicker>
+                    <div class="row" *ngFor="let day of days">
+                        <p><small>{{day}}</small></p>
+                        <div class="col-xs-4" *ngFor="let event of getEventsOnDay(day)">
+                             <button>{{getTimeFromDate(event.date)}}</button>
+                        </div>
                     </div>
                 </div>
             </div>

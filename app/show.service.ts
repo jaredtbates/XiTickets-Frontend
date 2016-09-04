@@ -7,6 +7,10 @@ export class ShowService {
     getShows(): Promise<Show[]> {
         return Promise.resolve(SHOWS);
     }
+
+    getShow(id: number): Show {
+        return SHOWS.find(show => show.id === id);
+    }
 }
 
 // TODO: PULL FROM BACKEND REST API

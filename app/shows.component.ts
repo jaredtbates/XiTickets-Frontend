@@ -4,7 +4,8 @@ import {SessionStorage} from 'angular2-localstorage/WebStorage';
 
 import {ShowService} from './show.service';
 import {EventService} from './event.service';
-import {DatepickerComponent} from './datepicker.component';
+
+import * as moment from 'moment';
 
 @Component({
     selector: 'shows-container',
@@ -15,9 +16,11 @@ export class ShowsComponent implements OnInit {
     isDetailsCollapsed: boolean = true;
     hovering: number = null;
     shows: Show[];
-    events: Array<any>;
+    events: Event[];
+    days: string[] = [];
     
     @SessionStorage() selectedShow: number = null;
+    @SessionStorage() selectedEvent: number = null;
     @SessionStorage() adultTickets: number = 0;
     @SessionStorage() childTickets: number = 0;
 
@@ -29,14 +32,41 @@ export class ShowsComponent implements OnInit {
         });
     }
     
+    getEvents(): void {
+        this.eventService.getEvents().then(retrievedEvents => {
+            this.events = retrievedEvents;
+            this.events.forEach(event => {
+                let day: string = event.date.toDateString();
+                if (this.days.indexOf(day) === -1) {
+                    this.days.push(day);
+                }
+            });
+        });
+    }
+    
     ngOnInit(): void {
         this.getShows();
+        this.getEvents();
     }
 
     onClick(id: number, event: Event): void {
         this.isDetailsCollapsed = false;
 
         this.selectedShow = id;
+    }
+
+    getEventsOnDay(day: string): Event[] {
+        let eventsOnDay: Event[] = [];
+        this.events.forEach(event => {
+            if (event.date.toDateString() === day) {
+                eventsOnDay.push(event);
+            }
+        });
+        return eventsOnDay;
+    }
+
+    getTimeFromDate(date: Date): string {
+        return moment(date).format('h:mmA');
     }
 }
 
@@ -47,4 +77,10 @@ export class Show {
     logoUrl: string;
     childCost: number;
     adultCost: number;
+}
+
+export class Event {
+    id: number;
+    showid: number;
+    date: Date;
 }
