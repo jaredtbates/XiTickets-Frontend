@@ -18,13 +18,15 @@ export class ShowsComponent implements OnInit {
     shows: Show[];
     events: Event[];
     days: string[] = [];
+
+    public radioModel:string = 'Middle';
     
     @SessionStorage() selectedShow: number = null;
     @SessionStorage() selectedEvent: number = null;
     @SessionStorage() adultTickets: number = 0;
     @SessionStorage() childTickets: number = 0;
 
-    constructor(private showService: ShowService, private eventService: EventService) { }
+    constructor(private showService: ShowService, private eventService: EventService) {}
 
     getShows(): void {
         this.showService.getShows().then(retrievedShows => {
@@ -49,9 +51,8 @@ export class ShowsComponent implements OnInit {
         this.getEvents();
     }
 
-    onClick(id: number, event: Event): void {
+    onShowClick(id: number): void {
         this.isDetailsCollapsed = false;
-
         this.selectedShow = id;
     }
 

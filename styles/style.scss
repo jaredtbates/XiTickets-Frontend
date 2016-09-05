@@ -31,6 +31,10 @@ img {
     -ms-user-select: none;
 }
 
+button:focus {
+    outline: 0px !important;
+}
+
 /* Size Utilities */
 
 @media (min-width: 550px) {
