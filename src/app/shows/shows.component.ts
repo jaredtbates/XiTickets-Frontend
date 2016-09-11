@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 import { SessionStorage } from 'ng2-webstorage';
-import moment from 'moment';
+import * as moment from 'moment';
 
 import { Show, Event, ShowService, EventService } from './shared/index';
 
 @Component({
-  moduleId: __moduleName,
+  moduleId: module.id,
   selector: 'app-shows',
   templateUrl: 'shows.component.html',
   styleUrls: ['shows.component.css'],

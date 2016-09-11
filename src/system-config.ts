@@ -26,7 +26,7 @@ const packages: any = {
   '@angular/router': { main: 'bundles/router.umd.min.js' },
   '@angular/http': { main: 'bundles/http.umd.min.js' },
   'app': {
-    format: 'register',
+    format: 'cjs',
     defaultExtension: 'js'
   },
   'moment': {

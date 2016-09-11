@@ -4,7 +4,7 @@ import { Row } from './shared/index';
 import { SeatService } from '../shared/index';
 
 @Component({
-  moduleId: __moduleName,
+  moduleId: module.id,
   selector: 'app-chart',
   templateUrl: 'chart.component.html',
   styleUrls: ['chart.component.css']

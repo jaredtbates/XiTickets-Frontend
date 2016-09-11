@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { LocalStorageService } from 'ng2-webstorage';
 
 @Component({
-  moduleId: __moduleName,
+  moduleId: module.id,
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css']
