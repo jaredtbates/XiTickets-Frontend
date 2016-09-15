@@ -9,8 +9,8 @@ import { Show, Event, ShowService, EventService } from './shared/index';
   moduleId: module.id,
   selector: 'app-shows',
   templateUrl: 'shows.component.html',
-  styleUrls: ['shows.component.css'],
-  providers: [ShowService, EventService]
+  styleUrls: [ 'shows.component.css' ],
+  providers: [ ShowService, EventService ]
 })
 export class ShowsComponent implements OnInit {
   isDetailsCollapsed: boolean = true;
