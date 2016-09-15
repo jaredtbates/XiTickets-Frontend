@@ -10,7 +10,6 @@ import { NG2_WEBSTORAGE } from 'ng2-webstorage';
 import { AppComponent } from './app.component';
 import { ShowsComponent } from './shows/shows.component';
 import { SeatsComponent } from './seats/seats.component';
-import { ChartComponent } from './seats/chart/chart.component';
 
 @NgModule({
   imports: [
@@ -22,8 +21,7 @@ import { ChartComponent } from './seats/chart/chart.component';
   declarations: [
     AppComponent,
     ShowsComponent,
-    SeatsComponent,
-    ChartComponent
+    SeatsComponent
   ],
   providers: [
     appRoutingProviders,
