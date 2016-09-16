@@ -31,7 +31,7 @@
                     <div class="row" *ngFor="let day of days">
                         <p><small>{{day}}</small></p>
                         <div class="col-xs-4" *ngFor="let event of getEventsOnDay(day)">
-                             <button type="button" class="btn btn-default"  [(ngModel)]="radioModel" btnRadio="{{event.id}}">{{getTimeFromDate(event.date)}}</button>
+                             <button type="button" class="btn btn-default" (click)="selectedEvent = event.id" btnRadio="{{event.id}}">{{getTimeFromDate(event.date)}}</button>
                         </div>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
 
     <div class="row">
         <div class="col-xs-offset-10 col-xs-2">
-            <a [class.disabled]="adultTickets + childTickets === 0 || adultTickets + childTickets > 30" class="btn btn-primary pull-right" role="button" id="select-seats-button" [routerLink]="['/seats']">Select Seats</a>
+            <a [class.disabled]="(adultTickets + childTickets === 0 || adultTickets + childTickets > 30) && selectedEvent != null" class="btn btn-primary pull-right" role="button" id="select-seats-button" [routerLink]="['/seats']">Select Seats</a>
         </div>
     </div>
 </div>

@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { routing, appRoutingProviders } from './app.routing';
 
-import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { Ng2BootstrapModule, ButtonsModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { NG2_WEBSTORAGE } from 'ng2-webstorage';
 
 import { AppComponent } from './app.component';
@@ -16,7 +16,8 @@ import { SeatsComponent } from './seats/seats.component';
     BrowserModule,
     FormsModule,
     routing,
-    Ng2BootstrapModule
+    Ng2BootstrapModule,
+    ButtonsModule
   ],
   declarations: [
     AppComponent,

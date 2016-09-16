@@ -19,8 +19,6 @@ export class ShowsComponent implements OnInit {
   events: Event[];
   days: string[] = [];
 
-  public radioModel: string = 'Middle';
-
   @SessionStorage() selectedShow: number = null;
   @SessionStorage() selectedEvent: number = null;
   @SessionStorage() adultTickets: number = 0;
