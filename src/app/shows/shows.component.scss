@@ -1,14 +1,14 @@
 .show-selector {
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
 }
 
 .show-selected {
-    background-color: #286090;
-    color: #fff;
+  background-color: #286090;
+  color: #fff;
 }
 
-.datepicker {
-    margin: 0 auto;
+button:focus {
+  outline: 0px !important;
 }

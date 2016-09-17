@@ -64,7 +64,11 @@ export class ShowsComponent implements OnInit {
     return eventsOnDay;
   }
 
-  getTimeFromDate(date: Date): string {
+  getReadableDate(date: Date): string {
+    return moment(date).format('MMMM Do, YYYY');
+  }
+
+  getReadableTime(date: Date): string {
     return moment(date).format('h:mmA');
   }
 }
