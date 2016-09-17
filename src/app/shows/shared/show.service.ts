@@ -8,8 +8,8 @@ export class ShowService {
     return Promise.resolve(SHOWS);
   }
 
-  getShow(id: number): Show {
-    return SHOWS.find(show => show.id === id);
+  getShow(id: number): Promise<Show> {
+    return Promise.resolve(SHOWS.find(show => show.id === id));
   }
 }
 

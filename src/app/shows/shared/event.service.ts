@@ -7,6 +7,10 @@ export class EventService {
   getEvents(): Promise<Event[]> {
     return Promise.resolve(EVENTS);
   }
+
+  getEventsFromShowId(id: number): Promise<Event[]> {
+    return Promise.all(EVENTS.filter(show => show.id === id));
+  }
 }
 
 // TODO: PULL FROM BACKEND REST API

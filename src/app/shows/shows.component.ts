@@ -47,12 +47,21 @@ export class ShowsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getShows();
-    this.getEvents();
   }
 
   onShowClick(id: number): void {
-    this.isDetailsCollapsed = false;
     this.selectedShow = id;
+    this.eventService.getEventsFromShowId(id).then(events => {
+      this.events = events;
+      this.days = [];
+      this.events.forEach(event => {
+        let day: string = event.date.toDateString();
+        if (this.days.indexOf(day) === -1) {
+          this.days.push(day);
+        }
+      });
+    });
+    this.isDetailsCollapsed = false;
   }
 
   getEventsOnDay(day: string): Event[] {
