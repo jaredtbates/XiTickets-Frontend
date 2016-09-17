@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { SessionStorage } from 'ng2-webstorage';
 import * as moment from 'moment';
 
+import { SeatsGuard } from '../seats/index';
 import { Show, Event, ShowService, EventService } from './shared/index';
 
 @Component({
@@ -64,11 +65,11 @@ export class ShowsComponent implements OnInit {
     return eventsOnDay;
   }
 
-  getReadableDate(date: Date): string {
-    return moment(date).format('MMMM Do, YYYY');
+  getReadableDateFromDateString(date: string): string {
+    return moment(date, 'ddd MMM DD YYYY').format('MMMM Do, YYYY');
   }
 
-  getReadableTime(date: Date): string {
+  getReadableTimeFromDate(date: Date): string {
     return moment(date).format('h:mmA');
   }
 }
