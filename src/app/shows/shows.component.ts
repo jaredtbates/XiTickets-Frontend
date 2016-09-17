@@ -33,18 +33,6 @@ export class ShowsComponent implements OnInit {
     });
   }
 
-  getEvents(): void {
-    this.eventService.getEvents().then(retrievedEvents => {
-      this.events = retrievedEvents;
-      this.events.forEach(event => {
-        let day: string = event.date.toDateString();
-        if (this.days.indexOf(day) === -1) {
-          this.days.push(day);
-        }
-      });
-    });
-  }
-
   ngOnInit(): void {
     this.getShows();
   }
