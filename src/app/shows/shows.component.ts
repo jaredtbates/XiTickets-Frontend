@@ -42,6 +42,7 @@ export class ShowsComponent implements OnInit {
     this.eventService.getEventsFromShowId(id).then(events => {
       this.events = events;
       this.days = [];
+      this.selectedEvent = null;
       this.events.forEach(event => {
         let day: string = event.date.toDateString();
         if (this.days.indexOf(day) === -1) {
