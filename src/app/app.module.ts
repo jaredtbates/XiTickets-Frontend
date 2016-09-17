@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
@@ -26,7 +27,8 @@ import { SeatsComponent } from './seats/seats.component';
   ],
   providers: [
     appRoutingProviders,
-    NG2_WEBSTORAGE
+    NG2_WEBSTORAGE,
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   bootstrap: [AppComponent]
 })
