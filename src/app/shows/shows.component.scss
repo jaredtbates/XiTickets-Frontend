@@ -12,3 +12,8 @@
 button:focus {
   outline: 0px !important;
 }
+
+#event-selector {
+  max-height: 300px;
+  overflow-y: auto;
+}
