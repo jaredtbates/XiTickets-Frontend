@@ -1,17 +1,24 @@
-import { Component } from '@angular/core';
-import { SeatService, Row } from './shared/index';
+import { Component, OnInit } from '@angular/core';
+
+import { SessionStorage } from 'ng2-webstorage';
+
+import { SeatService, Row, AvailabilityService } from './shared/index';
+import { ShowService } from '../shows/shared/index';
 
 @Component({
   moduleId: module.id,
   selector: 'app-seats',
   templateUrl: 'seats.component.html',
   styleUrls: [ 'seats.component.css' ],
-  providers: [ SeatService ]
+  providers: [ SeatService, ShowService, AvailabilityService ]
 })
-export class SeatsComponent {
+export class SeatsComponent implements OnInit {
   rows: Row[] = [];
 
-  constructor(private seatService: SeatService) { }
+  @SessionStorage() selectedShow: number = null;
+  @SessionStorage() selectedEvent: number = null;
+
+  constructor(private seatService: SeatService, private showService: ShowService, private availabilityService: AvailabilityService) { }
 
   getSeats(): void {
     this.seatService.getSeats().then(seats => {
