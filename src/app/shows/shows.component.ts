@@ -20,10 +20,10 @@ export class ShowsComponent implements OnInit {
   events: Event[];
   days: string[] = [];
 
-  @SessionStorage() selectedShow: number = null;
-  @SessionStorage() selectedEvent: number = null;
-  @SessionStorage() adultTickets: number = 0;
-  @SessionStorage() childTickets: number = 0;
+  @SessionStorage() selectedShow: number;
+  @SessionStorage() selectedEvent: number;
+  @SessionStorage() adultTickets: number;
+  @SessionStorage() childTickets: number;
 
   constructor(private showService: ShowService, private eventService: EventService) { }
 
@@ -34,6 +34,12 @@ export class ShowsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if (this.selectedShow == null && this.selectedEvent == null && this.adultTickets == null && this.childTickets == null) {
+      this.adultTickets = 0;
+      this.childTickets = 0;
+    } else {
+      this.onShowClick(this.selectedShow);
+    }
     this.getShows();
   }
 
@@ -42,7 +48,6 @@ export class ShowsComponent implements OnInit {
     this.eventService.getEventsFromShowId(id).then(events => {
       this.events = events;
       this.days = [];
-      this.selectedEvent = null;
       this.events.forEach(event => {
         let day: string = event.date.toDateString();
         if (this.days.indexOf(day) === -1) {

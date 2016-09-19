@@ -15,8 +15,8 @@ import { ShowService } from '../shows/shared/index';
 export class SeatsComponent implements OnInit {
   rows: Row[] = [];
 
-  @SessionStorage() selectedShow: number = null;
-  @SessionStorage() selectedEvent: number = null;
+  @SessionStorage() selectedShow: number;
+  @SessionStorage() selectedEvent: number;
 
   constructor(private seatService: SeatService, private showService: ShowService, private availabilityService: AvailabilityService) { }
 
