@@ -38,16 +38,19 @@ export class ShowsComponent implements OnInit {
       this.adultTickets = 0;
       this.childTickets = 0;
     } else {
-      this.onShowClick(this.selectedShow);
+      this.onShowClick(this.selectedShow, false);
     }
     this.getShows();
   }
 
-  onShowClick(id: number): void {
+  onShowClick(id: number, resetEvent: boolean = true): void {
     this.selectedShow = id;
     this.eventService.getEventsFromShowId(id).then(events => {
       this.events = events;
       this.days = [];
+      if (resetEvent) {
+        this.selectedEvent = null;
+      }
       this.events.forEach(event => {
         let day: string = event.date.toDateString();
         if (this.days.indexOf(day) === -1) {
