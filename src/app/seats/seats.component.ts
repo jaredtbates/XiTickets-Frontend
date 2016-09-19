@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { SessionStorage } from 'ng2-webstorage';
 
-import { SeatService, Row, AvailabilityService } from './shared/index';
+import { SeatService, Row, Section, AvailabilityService } from './shared/index';
 import { ShowService } from '../shows/shared/index';
 
 @Component({
@@ -13,6 +13,7 @@ import { ShowService } from '../shows/shared/index';
   providers: [ SeatService, ShowService, AvailabilityService ]
 })
 export class SeatsComponent implements OnInit {
+  sections: Section[] = [];
   rows: Row[] = [];
 
   @SessionStorage() selectedShow: number;
@@ -21,7 +22,7 @@ export class SeatsComponent implements OnInit {
   constructor(private seatService: SeatService, private showService: ShowService, private availabilityService: AvailabilityService) { }
 
   getSeats(): void {
-    this.seatService.getSeats().then(seats => {
+    this.seatService.getRows().then(seats => {
       seats.forEach(seat => {
         let containingRow: Row;
 

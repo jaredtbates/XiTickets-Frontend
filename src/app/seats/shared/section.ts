@@ -1,5 +1,5 @@
 import { Row } from './index';
 
 export class Section {
-  constructor(public id: string, public rows: Row[]) { }
+  constructor(public id: string) { }
 }

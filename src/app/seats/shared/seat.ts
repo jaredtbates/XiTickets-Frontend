@@ -1,5 +1,3 @@
 export class Seat {
-  id: number;
-  row: string;
-  column: number;
+  constructor(public id: number, public section: string, public row: string, public column: number) { }
 }
