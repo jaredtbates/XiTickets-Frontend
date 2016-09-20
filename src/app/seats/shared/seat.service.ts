@@ -54,7 +54,7 @@ const SEATS: Seat[] = [
 
 const BLANKS = [
   { row: 'A', insertAfterColumn: 5 },
-  { row: 'B', insertAfterColumn: 5}
+  { row: 'B', insertAfterColumn: 5 }
 ]
 
 const ROWS: Row[] = [
