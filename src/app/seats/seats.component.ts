@@ -27,4 +27,8 @@ export class SeatsComponent implements OnInit {
   ngOnInit(): void {
     this.getSeats();
   }
+
+  getBlanks(numberOfBlanks: number) {
+    return new Array(numberOfBlanks).fill(1);
+  }
 }
