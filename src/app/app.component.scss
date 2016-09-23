@@ -3,26 +3,26 @@
 /* Breadcrumbs */
 
 .breadcrumb {
-    pointer-events: none;
-    background: #fff;
-    border: 1px solid #d6d6d6;
-    border-radius: 3px;
-    display: block;
+  pointer-events: none;
+  background: #fff;
+  border: 1px solid #d6d6d6;
+  border-radius: 3px;
+  display: block;
 
-    li {
-        font-size: 16px;
-    }
+  li {
+    font-size: 16px;
+  }
 
-    a {
-        color: #d6d6d6;
-    }
+  a {
+    color: #d6d6d6;
+  }
 }
 
 .breadcrumb > .active {
-    color: #428bca;
+  color: #428bca;
 }
 
 .breadcrumb > li+li:before {
-    color: #999999;
-    content: "\2014\00a0";
+  color: #999999;
+  content: "\2014\00a0";
 }

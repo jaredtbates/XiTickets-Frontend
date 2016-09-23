@@ -59,7 +59,7 @@ $seat-unavailable-color: red;
 .seat-space {
   @extend .seat;
   background-color: white;
-  cursor: auto;
+  cursor: default;
   margin: 0;
   padding: 0.5px;
 }

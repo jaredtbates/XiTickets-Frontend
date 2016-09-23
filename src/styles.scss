@@ -1,62 +1,66 @@
 body {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-family: 'Open Sans', sans-serif;
-    text-align: center;
-    overflow-x: hidden;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  overflow-x: hidden;
 }
 
 .inside-header {
-    margin-bottom: 20px !important;
+  margin-bottom: 20px !important;
+}
+
+.inside-footer {
+  margin-top: 20px !important;
 }
 
 img {
-    pointer-events: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+  pointer-events: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 /* Size Utilities */
 
 @media (min-width: 550px) {
-    .col-ls-xs-6 {
-        width: 50%;
-    }
+  .col-ls-xs-6 {
+      width: 50%;
+  }
 
-    .visible-xs-pt {
-        display: none !important;
-    }
+  .visible-xs-pt {
+      display: none !important;
+  }
 }
 
 @media (min-width: 550px) {
-    .visible-xs-ls {
-        display: none;
-    }
+  .visible-xs-ls {
+      display: none;
+  }
 }
 
 @media (max-width: 550px) {
-    .hidden-xs-pt {
-        display: none !important;
-    }
+  .hidden-xs-pt {
+      display: none !important;
+  }
 }
 
 /* Text Sizes */
 
 p.input-label {
-    font-size: 14px;
-    position: relative;
-    transform: translateY(50%);
+  font-size: 14px;
+  position: relative;
+  transform: translateY(50%);
 }
 
 h4 {
-    font-size: 17.6px;
+  font-size: 17.6px;
 }
 
 h5 {
-    font-size: 14.6px;
+  font-size: 14.6px;
 }
 
 /* Loading Indicator */
