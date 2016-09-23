@@ -6,10 +6,9 @@ import { Seat, SeatService, Row, AvailabilityService } from './shared/index';
 import { ShowService } from '../shows/shared/index';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-seats',
   templateUrl: 'seats.component.html',
-  styleUrls: ['seats.component.css'],
+  styleUrls: ['seats.component.scss'],
   providers: [SeatService, ShowService, AvailabilityService]
 })
 export class SeatsComponent implements OnInit {

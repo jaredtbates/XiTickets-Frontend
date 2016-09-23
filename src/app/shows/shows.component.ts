@@ -7,10 +7,9 @@ import { SeatsGuard } from '../seats/index';
 import { Show, Event, ShowService, EventService } from './shared/index';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-shows',
   templateUrl: 'shows.component.html',
-  styleUrls: [ 'shows.component.css' ],
+  styleUrls: [ 'shows.component.scss' ],
   providers: [ ShowService, EventService ]
 })
 export class ShowsComponent implements OnInit {
