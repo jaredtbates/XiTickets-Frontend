@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Show } from '../shared/index';
+import { Show } from '../shared';
 
 @Injectable()
 export class ShowService {

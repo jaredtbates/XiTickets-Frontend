@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { SessionStorage } from 'ng2-webstorage';
 import * as moment from 'moment';
 
-import { SeatsGuard } from '../seats/index';
-import { Show, Event, ShowService, EventService } from './shared/index';
+import { SeatsGuard } from '../seats';
+import { Show, Event, ShowService, EventService } from './shared';
 
 @Component({
   selector: 'app-shows',

@@ -1,7 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
 
-import { ShowsComponent } from './shows/index';
-import { SeatsComponent, SeatsGuard } from './seats/index';
+import { ShowsComponent } from './shows';
+import { SeatsComponent, SeatsGuard } from './seats';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'shows', pathMatch: 'full' },

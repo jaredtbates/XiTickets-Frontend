@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Seat, Row } from './index';
+import { Seat, Row } from './';
 
 @Injectable()
 export class SeatService {

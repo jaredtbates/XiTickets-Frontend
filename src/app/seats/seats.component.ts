@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { SessionStorage } from 'ng2-webstorage';
 
-import { Seat, SeatService, Row, AvailabilityService } from './shared/index';
-import { ShowService } from '../shows/shared/index';
+import { Seat, SeatService, Row, AvailabilityService } from './shared';
+import { ShowService } from '../shows/shared';
 
 @Component({
   selector: 'app-seats',
