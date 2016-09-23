@@ -14,14 +14,12 @@
         <h1>Stage</h1>
       </div>
 
-      <div *ngFor="let row of rows" class="row seat-row">
-        <div class="col-xs-12">
-          <div *ngFor="let seat of row.seats" class="parent-seat">
-            <div *ngIf="seat.blanksToLeft > 0">
+      <div id="seat-chart-rows">
+        <div *ngFor="let row of rows" class="row seat-row">
+          <div class="col-xs-12">
+            <div *ngFor="let seat of row.seats" class="parent-seat">
               <div *ngFor="let blank of getBlanks(seat.blanksToLeft)" class="seat-space"></div>
-            </div>
-            <div class="seat" [id]="seat.id"></div>
-            <div *ngIf="seat.blanksToRight > 0">
+              <div class="seat" [id]="seat.id"></div>
               <div *ngFor="let blank of getBlanks(seat.blanksToRight)" class="seat-space"></div>
             </div>
           </div>

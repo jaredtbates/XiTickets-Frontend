@@ -18,6 +18,19 @@ $seat-focused-color: #449d44;
 $seat-available-color: #5cb85c;
 $seat-unavailable-color: red;
 
+#seat-chart-rows {
+  display: inline-block;
+  text-align: left;
+}
+
+.seat-row {
+  height: 25px;
+}
+
+.seat-row:after {
+  clear: both;
+}
+
 .parent-seat {
   display: inline-block;
 
@@ -34,36 +47,9 @@ $seat-unavailable-color: red;
   width: 11px;
   border-radius: 5px;
   margin: 1px;
-  background-color: #5cb85c;
+  background-color: $seat-available-color;
   color: white;
   cursor: pointer;
-}
-
-@media (min-width: 750px) {
-  .seat {
-    height: 14px;
-    width: 14px;
-    border-radius: 5px;
-    margin: 2px;
-  }
-}
-
-@media (min-width: 992px) {
-  .seat {
-    height: 16px;
-    width: 16px;
-    border-radius: 6px;
-    margin: 3px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .seat {
-    height: 20px;
-    width: 20px;
-    border-radius: 7px;
-    margin: 4px;
-  }
 }
 
 .seat:focus {
@@ -74,15 +60,47 @@ $seat-unavailable-color: red;
   @extend .seat;
   background-color: white;
   cursor: auto;
+  margin: 0;
+  padding: 0.5px;
 }
 
-.seat-row {
-  height: 25px;
-  text-align: center;
+@media (min-width: 750px) {
+  .seat {
+    height: 14px;
+    width: 14px;
+    border-radius: 5px;
+    margin: 2px;
+  }
+
+  .seat-space {
+    padding: 1px;
+  }
 }
 
-.seat-row:after {
-  clear: both;
+@media (min-width: 992px) {
+  .seat {
+    height: 16px;
+    width: 16px;
+    border-radius: 6px;
+    margin: 3px;
+  }
+
+  .seat-space {
+    padding: 1.5px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .seat {
+    height: 20px;
+    width: 20px;
+    border-radius: 7px;
+    margin: 4px;
+  }
+
+  .seat-space {
+    padding: 2px;
+  }
 }
 
 .seat.selected {
