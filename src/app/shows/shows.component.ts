@@ -14,13 +14,13 @@ import { Show, Event, ShowService, EventService } from './shared';
 })
 export class ShowsComponent implements OnInit {
   isDetailsCollapsed: boolean = true;
-  hovering: number = null;
+  hovering: Show = null;
   shows: Show[];
   events: Event[];
   days: string[] = [];
 
-  @SessionStorage() selectedShow: number;
-  @SessionStorage() selectedEvent: number;
+  @SessionStorage() selectedShow: Show;
+  @SessionStorage() selectedEvent: Event;
   @SessionStorage() adultTickets: number;
   @SessionStorage() childTickets: number;
 
@@ -33,18 +33,18 @@ export class ShowsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getShows();
     if (this.selectedShow == null && this.selectedEvent == null && this.adultTickets == null && this.childTickets == null) {
       this.adultTickets = 0;
       this.childTickets = 0;
     } else {
       this.onShowClick(this.selectedShow, false);
     }
-    this.getShows();
   }
 
-  onShowClick(id: number, resetEvent: boolean = true): void {
-    this.selectedShow = id;
-    this.eventService.getEventsFromShowId(id).then(events => {
+  onShowClick(show: Show, resetEvent: boolean = true): void {
+    this.selectedShow = show;
+    this.eventService.getEventsFromShow(show).then(events => {
       this.events = events;
       this.days = [];
       if (resetEvent) {

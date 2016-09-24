@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Event } from './';
+import { Event, Show } from './';
 
 @Injectable()
 export class EventService {
@@ -8,8 +8,8 @@ export class EventService {
     return Promise.resolve(EVENTS);
   }
 
-  getEventsFromShowId(id: number): Promise<Event[]> {
-    return Promise.all(EVENTS.filter(event => event.showid === id));
+  getEventsFromShow(show: Show): Promise<Event[]> {
+    return Promise.all(EVENTS.filter(event => event.showid === show.id));
   }
 }
 
