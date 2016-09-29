@@ -119,3 +119,15 @@ $seat-unavailable-color: red;
   background-color: $seat-unavailable-color;
   cursor: not-allowed;
 }
+
+#show-image {
+  max-height: 60px;
+  max-width: 100px;
+  float: left;
+  margin-right: 10px;
+}
+
+#selection-summary {
+  text-align: left;
+  vertical-align: middle;
+}
