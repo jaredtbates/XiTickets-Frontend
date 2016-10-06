@@ -16,7 +16,7 @@ export class SeatsComponent implements OnInit {
   @SessionStorage() selectedEvent: Event;
   @SessionStorage() adultTickets: number;
   @SessionStorage() childTickets: number;
-  @SessionStorage() selectedSeats: Seat[];
+  @SessionStorage() selectedSeats;
 
   rows: Row[];
 
@@ -37,7 +37,7 @@ export class SeatsComponent implements OnInit {
     return new Array(numberOfBlanks).fill(1);
   }
 
-  onSeatClick(selectedSeat: Seat) {
+  onSeatClick(selectedSeat: Seat): void {
     this.selectedSeats.push(selectedSeat);
   }
 }
