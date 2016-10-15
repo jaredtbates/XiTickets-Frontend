@@ -37,6 +37,7 @@
     <div class="well clearfix" id="selection-summary">
         <img class="img-responsive" id="show-image" [src]="selectedShow.logoUrl" [alt]="selectedShow.name">
         <h3>{{selectedShow.name}}</h3>
+        <p><span *ngFor="let seat of selectedSeats">{{seat.id}}, </span></p>
     </div>
   </div>
 
