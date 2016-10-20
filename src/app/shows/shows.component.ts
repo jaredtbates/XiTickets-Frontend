@@ -13,7 +13,6 @@ import { Show, Event, ShowService, EventService } from './shared';
   providers: [ ShowService, EventService ]
 })
 export class ShowsComponent implements OnInit {
-  isDetailsCollapsed: boolean = true;
   hovering: Show = null;
   shows: Show[];
   events: Event[];
@@ -34,7 +33,7 @@ export class ShowsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getShows();
-    if (this.selectedShow == null && this.selectedEvent == null && this.adultTickets == null && this.childTickets == null) {
+    if (this.adultTickets == null && this.childTickets == null) {
       this.adultTickets = 0;
       this.childTickets = 0;
     } else {
@@ -57,7 +56,6 @@ export class ShowsComponent implements OnInit {
         }
       });
     });
-    this.isDetailsCollapsed = false;
   }
 
   getEventsOnDay(day: string): Event[] {
