@@ -19,7 +19,7 @@
           <div class="col-xs-12">
             <div *ngFor="let seat of row.seats" class="parent-seat">
               <div *ngFor="let blank of getBlanks(seat.blanksToLeft)" class="seat-space"></div>
-              <div class="seat" [id]="seat.id" (click)="onSeatClick(seat)" (mouseenter)="onSeatHover(seat);" (mouseleave)="hovering = null" [class.focused]="hovering === seat" [class.selected]="selectedSeats.indexOf(seat) !== -1"></div>
+              <div class="seat" [id]="seat.id" (click)="onSeatClick(seat)" (mouseenter)="hovering = seat" (mouseleave)="hovering = null" [class.focused]="hovering === seat" [class.selected]="selectedSeats.indexOf(seat) !== -1"></div>
             </div>
           </div>
         </div>
@@ -34,14 +34,23 @@
   </div>
 
   <div class="col-xs-8">
-    <div class="well clearfix" id="selection-summary">
+    <div class="well well-sm clearfix" id="selection-summary">
+      <div class="col-xs-3">
         <img class="img-responsive" id="show-image" [src]="selectedShow.logoUrl" [alt]="selectedShow.name">
-        <h3>{{selectedShow.name}}</h3>
-        <p><span *ngFor="let seat of selectedSeats">{{seat.id}}, </span></p>
+      </div>
+
+      <div class="col-xs-6">
+        <h4>{{selectedShow.name}}</h4>
+        <p>You have selected <b>{{selectedSeats.length}}</b> out of <b>{{adultTickets + childTickets}}</b> seats.</p>
+      </div>
+
+      <div class="col-xs-3">
+        <h5>Subtotal: <b>${{(adultTickets * adultCost) + (childTickets * childCost)}}</b></h5>
+      </div>
     </div>
   </div>
 
   <div class="col-xs-2">
-    <a class="btn btn-primary pull-right" role="button" [routerLink]="['/checkout']">Checkout</a>
+    <a class="btn btn-primary pull-right" role="button" [routerLink]="['/checkout']" [class.disabled]="selectedSeats.length !== adultTickets + childTickets">Checkout</a>
   </div>
 </div>

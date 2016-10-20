@@ -20,6 +20,8 @@ export class SeatsComponent implements OnInit {
   @SessionStorage('selectedSeats') selectedSeatsString: String;
   selectedSeats;
   rows: Row[];
+  childCost: number = 3;
+  adultCost: number = 5;
 
   constructor(private seatService: SeatService, private showService: ShowService, private availabilityService: AvailabilityService) { }
 
@@ -39,7 +41,7 @@ export class SeatsComponent implements OnInit {
   }
 
   onSeatClick(selectedSeat: Seat): void {
-    if (this.selectedSeats.indexOf(selectedSeat) === -1) {
+    if (this.selectedSeats.indexOf(selectedSeat) === -1 && this.selectedSeats.length < this.adultTickets + this.childTickets) {
       this.addSelectedSeatToArray(selectedSeat);
     } else {
       this.removeSelectedSeatFromArray(selectedSeat);
@@ -58,9 +60,5 @@ export class SeatsComponent implements OnInit {
       this.selectedSeats.splice(index, 1);
       this.selectedSeatsString = JSON.stringify(this.selectedSeats);
     }
-  }
-
-  onSeatHover(seat: Seat) {
-    this.hovering = seat;
   }
 }

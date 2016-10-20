@@ -17,6 +17,8 @@ export class ShowsComponent implements OnInit {
   shows: Show[];
   events: Event[];
   days: string[] = [];
+  childCost: number = 3;
+  adultCost: number = 5;
 
   @SessionStorage() selectedShow: Show;
   @SessionStorage() selectedEvent: Event;
