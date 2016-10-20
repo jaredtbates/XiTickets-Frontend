@@ -12,13 +12,13 @@ import { ShowService, Show, Event } from '../shows/shared';
   providers: [SeatService, ShowService, AvailabilityService]
 })
 export class SeatsComponent implements OnInit {
+  hovering: Seat = null;
   @SessionStorage() selectedShow: Show;
   @SessionStorage() selectedEvent: Event;
   @SessionStorage() adultTickets: number;
   @SessionStorage() childTickets: number;
   @SessionStorage('selectedSeats') selectedSeatsString: String;
   selectedSeats;
-
   rows: Row[];
 
   constructor(private seatService: SeatService, private showService: ShowService, private availabilityService: AvailabilityService) { }
@@ -58,5 +58,9 @@ export class SeatsComponent implements OnInit {
       this.selectedSeats.splice(index, 1);
       this.selectedSeatsString = JSON.stringify(this.selectedSeats);
     }
+  }
+
+  onSeatHover(seat: Seat) {
+    this.hovering = seat;
   }
 }

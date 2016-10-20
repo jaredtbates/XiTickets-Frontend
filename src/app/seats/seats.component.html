@@ -19,7 +19,7 @@
           <div class="col-xs-12">
             <div *ngFor="let seat of row.seats" class="parent-seat">
               <div *ngFor="let blank of getBlanks(seat.blanksToLeft)" class="seat-space"></div>
-              <div class="seat" [id]="seat.id" (click)="onSeatClick(seat)" [class.seat-selected]="selectedSeats.indexOf(seat) !== -1"></div>
+              <div class="seat" [id]="seat.id" (click)="onSeatClick(seat)" (mouseenter)="onSeatHover(seat);" (mouseleave)="hovering = null" [class.focused]="hovering === seat" [class.selected]="selectedSeats.indexOf(seat) !== -1"></div>
             </div>
           </div>
         </div>

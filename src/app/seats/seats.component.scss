@@ -103,12 +103,12 @@ $seat-unavailable-color: red;
   }
 }
 
-.seat.selected {
-  background-color: $seat-selected-color;
-}
-
 .seat.focused {
   background-color: $seat-focused-color;
+}
+
+.seat.selected {
+  background-color: $seat-selected-color;
 }
 
 .seat.available {
