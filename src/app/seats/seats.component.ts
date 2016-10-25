@@ -17,7 +17,7 @@ export class SeatsComponent implements OnInit {
   @SessionStorage() selectedEvent: Event;
   @SessionStorage() adultTickets: number;
   @SessionStorage() childTickets: number;
-  @SessionStorage('selectedSeats') selectedSeatsString: String;
+  @SessionStorage('selectedSeats') selectedSeatsString: string;
   selectedSeats;
   rows: Row[];
   childCost: number = 3;
@@ -32,6 +32,7 @@ export class SeatsComponent implements OnInit {
   ngOnInit(): void {
     this.getSeats();
     if (this.selectedSeats == null) {
+      this.selectedSeatsString = '';
       this.selectedSeats = [];
     }
   }
