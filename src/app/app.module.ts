@@ -11,6 +11,7 @@ import { Ng2Webstorage, KeyStorageHelper } from 'ng2-webstorage';
 import { AppComponent } from './app.component';
 import { ShowsComponent } from './shows/shows.component';
 import { SeatsComponent } from './seats/seats.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import { SeatsComponent } from './seats/seats.component';
   declarations: [
     AppComponent,
     ShowsComponent,
-    SeatsComponent
+    SeatsComponent,
+    CheckoutComponent
   ],
   providers: [
     appRoutingProviders,

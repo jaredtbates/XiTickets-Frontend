@@ -38,7 +38,7 @@ export class ShowsComponent implements OnInit {
     if (this.adultTickets == null && this.childTickets == null) {
       this.adultTickets = 0;
       this.childTickets = 0;
-    } else {
+    } else if (this.selectedShow != null) {
       this.onShowClick(this.selectedShow, false);
     }
   }
