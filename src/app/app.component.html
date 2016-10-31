@@ -1,4 +1,4 @@
-<div class="container">
+<div *ngIf="isSecure()" class="container">
   <div class="row">
     <div class="col-xs-12">
       <header>
@@ -27,6 +27,15 @@
   <div class="row">
     <div class="col-xs-12">
       <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!isSecure()" class="container">
+  <div class="row">
+    <div class="alert alert-danger" role="alert">
+      <h1><b>Your connection is not secure.</b></h1>
+      <h3>Please contact the site owner to resolve this issue.</h3>
     </div>
   </div>
 </div>
