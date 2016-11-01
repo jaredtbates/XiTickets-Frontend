@@ -2,14 +2,15 @@ import { Component, OnInit } from '@angular/core';
 
 import { SessionStorage } from 'ng2-webstorage';
 
-import { Seat, SeatService, Row, AvailabilityService } from './shared';
+import { Seat, SeatService, Row, ReservationService } from './shared';
 import { ShowService, Show, Event } from '../shows/shared';
+import { Reservation } from '../checkout/shared';
 
 @Component({
   selector: 'app-seats',
   templateUrl: 'seats.component.html',
   styleUrls: ['seats.component.scss'],
-  providers: [SeatService, ShowService, AvailabilityService]
+  providers: [SeatService, ShowService, ReservationService]
 })
 export class SeatsComponent implements OnInit {
   hovering: Seat = null;
@@ -23,7 +24,7 @@ export class SeatsComponent implements OnInit {
   childCost: number = 3;
   adultCost: number = 5;
 
-  constructor(private seatService: SeatService, private showService: ShowService, private availabilityService: AvailabilityService) { }
+  constructor(private seatService: SeatService, private showService: ShowService, private reservationService: ReservationService) { }
 
   getSeats(): void {
     this.seatService.getRows().then(rows => this.rows = rows);
