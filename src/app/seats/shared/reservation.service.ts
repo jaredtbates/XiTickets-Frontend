@@ -6,8 +6,14 @@ import { Reservation } from '../../checkout/shared';
 
 @Injectable()
 export class ReservationService {
-  isSeatReserved(seat: Seat, event: Event): boolean {
-    return RESERVATIONS.find(reservation => reservation.event === event).seats.indexOf(seat) !== -1;
+  getReservedSeats(event: Event): Promise<Seat[]> {
+    console.log(event);
+    let reservedSeats: Seat[] = []
+    RESERVATIONS.filter(reservation => reservation.event.id === event.id).map(reservation => {
+      reservation.seats.forEach(seat => reservedSeats.push(seat));
+      console.log(reservation);
+    });
+    return Promise.resolve(reservedSeats);
   }
 }
 

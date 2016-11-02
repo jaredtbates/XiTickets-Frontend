@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { SessionStorage } from 'ng2-webstorage';
 
-import { Seat, SeatService, Row, AvailabilityService } from '../seats/shared';
+import { Seat, SeatService, Row, ReservationService } from '../seats/shared';
 import { ShowService, Show, Event } from '../shows/shared';
 
 @Component({

@@ -111,11 +111,7 @@ $seat-unavailable-color: red;
   background-color: $seat-selected-color;
 }
 
-.seat.available {
-  background-color: $seat-available-color;
-}
-
-.seat.unavailable {
+.seat.reserved {
   background-color: $seat-unavailable-color;
   cursor: not-allowed;
 }

@@ -3,12 +3,14 @@ import { CanActivate, Router } from '@angular/router'
 
 import { SessionStorage } from 'ng2-webstorage';
 
+import { Show, Event } from '../shows/shared';
+
 @Injectable()
 export class SeatsGuard implements CanActivate {
   constructor(private router: Router) { }
 
-  @SessionStorage() selectedShow: number;
-  @SessionStorage() selectedEvent: number;
+  @SessionStorage() selectedShow: Show;
+  @SessionStorage() selectedEvent: Event;
   @SessionStorage() adultTickets: number;
   @SessionStorage() childTickets: number;
 
