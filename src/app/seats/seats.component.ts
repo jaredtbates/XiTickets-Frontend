@@ -65,4 +65,13 @@ export class SeatsComponent implements OnInit {
       this.selectedSeatsString = JSON.stringify(this.selectedSeats);
     }
   }
+
+  isSeatReserved(seat: Seat): boolean {
+    for (let reservedSeat of this.reservedSeats) {
+      if (reservedSeat.id === seat.id) {
+        return true;
+      }
+    }
+    return false;
+  }
 }

@@ -30,7 +30,7 @@
           <div class="row" *ngFor="let day of days">
             <p><small>{{getReadableDateFromDateString(day)}}</small></p>
             <div class="col-xs-4" *ngFor="let event of getEventsOnDay(day)">
-              <button type="button" class="btn btn-default" [(ngModel)]="selectedEvent" [btnRadio]="event.id">{{getReadableTimeFromDate(event.date)}}</button>
+              <button type="button" class="btn btn-default" [(ngModel)]="selectedEvent" [btnRadio]="event">{{getReadableTimeFromDate(event.date)}}</button>
             </div>
           </div>
         </div>

@@ -7,12 +7,8 @@ import { Reservation } from '../../checkout/shared';
 @Injectable()
 export class ReservationService {
   getReservedSeats(event: Event): Promise<Seat[]> {
-    console.log(event);
     let reservedSeats: Seat[] = []
-    RESERVATIONS.filter(reservation => reservation.event.id === event.id).map(reservation => {
-      reservation.seats.forEach(seat => reservedSeats.push(seat));
-      console.log(reservation);
-    });
+    RESERVATIONS.filter(reservation => reservation.event.id === event.id).map(reservation => reservation.seats.forEach(seat => reservedSeats.push(seat)));
     return Promise.resolve(reservedSeats);
   }
 }
@@ -27,8 +23,7 @@ const RESERVATIONS: Reservation[] = [
       { id: 'H_7', row: 'H', column: 15, blanksToLeft: 0 },
       { id: 'H_5', row: 'H', column: 16, blanksToLeft: 0 },
       { id: 'H_3', row: 'H', column: 17, blanksToLeft: 0 },
-      { id: 'H_1', row: 'H', column: 18, blanksToLeft: 0 },
-      { id: 'H_2', row: 'H', column: 19, blanksToLeft: 1 }
+      { id: 'H_1', row: 'H', column: 18, blanksToLeft: 0 }
     ],
     event: { id: 1, showid: 1, date: new Date(2017, 1, 1, 15, 0, 0, 0) },
     purchaseDate: new Date(2016, 11, 1, 0, 0, 0)
