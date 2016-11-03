@@ -1,26 +1,38 @@
+<div class="row inside-header">
+  <div class="col-xs-12">
+    <h2>Checkout</h2>
+    <h4>Please review and complete your order.</h4>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <img class="img-responsive pull-right" id="show-image" [src]="selectedShow.logoUrl" [alt]="selectedShow.name">
+  </div>
+
+  <div class="col-xs-6 text-left">
+    <h4>{{selectedShow.name}}</h4>
+    <table>
+      <tr *ngIf="adultTickets > 0">
+        <td>Adults:&nbsp;</td>
+        <td><b>{{adultTickets}}</b></td>
+      </tr>
+      <tr *ngIf="childTickets > 0">
+        <td>Children:&nbsp;</td>
+        <td><b>{{childTickets}}</b></td>
+      </tr>
+    </table>
+    <hr>
+    <h5>Subtotal: <b>${{(adultTickets * adultCost) + (childTickets * childCost)}}</b></h5>
+  </div>
+</div>
+
 <div class="row">
   <div class="col-xs-2">
-    <a class="btn btn-default pull-left" role="button" [routerLink]="['/shows']">Go Back</a>
+    <a class="btn btn-default pull-left" role="button" [routerLink]="['/seats']">Go Back</a>
   </div>
 
-  <div class="col-xs-8">
-    <div class="well well-sm clearfix" id="selection-summary">
-      <div class="col-xs-3">
-        <img class="img-responsive" id="show-image" [src]="selectedShow.logoUrl" [alt]="selectedShow.name">
-      </div>
-
-      <div class="col-xs-6">
-        <h4>{{selectedShow.name}}</h4>
-        <p>You have selected <b>{{selectedSeats.length}}</b> out of <b>{{adultTickets + childTickets}}</b> seats.</p>
-      </div>
-
-      <div class="col-xs-3">
-        <h5>Subtotal: <b>${{(adultTickets * adultCost) + (childTickets * childCost)}}</b></h5>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-xs-2">
-    <a class="btn btn-primary pull-right" role="button" [routerLink]="['/checkout']" [class.disabled]="selectedSeats.length !== adultTickets + childTickets">Checkout</a>
+  <div class="col-xs-offset-8 col-xs-2">
+    INSERT PAY BUTTON HERE
   </div>
 </div>
