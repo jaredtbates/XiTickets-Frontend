@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { routing, appRoutingProviders } from './app.routing';
 
@@ -17,6 +18,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpModule,
     routing,
     Ng2BootstrapModule,
     ButtonsModule,

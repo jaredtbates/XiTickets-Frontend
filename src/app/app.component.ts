@@ -3,6 +3,8 @@ import { LocalStorageService } from 'ng2-webstorage';
 import { environment } from '../environments/environment';
 import { InformationService } from './shared';
 
+import './rxjs-operators';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',

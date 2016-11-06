@@ -19,6 +19,7 @@ export class ShowsComponent implements OnInit {
   days: string[] = [];
   childCost: number = 3;
   adultCost: number = 5;
+  error: any;
 
   @SessionStorage() selectedShow: Show;
   @SessionStorage() selectedEvent: Event;
@@ -28,9 +29,7 @@ export class ShowsComponent implements OnInit {
   constructor(private showService: ShowService, private eventService: EventService) { }
 
   getShows(): void {
-    this.showService.getShows().then(retrievedShows => {
-      this.shows = retrievedShows;
-    });
+    this.showService.getShows().subscribe(retrievedShows => this.shows = retrievedShows, error => this.error = error);
   }
 
   ngOnInit(): void {
