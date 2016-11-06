@@ -23,7 +23,8 @@
       </tr>
     </table>
     <hr>
-    <h5>Subtotal: <b>${{(adultTickets * adultCost) + (childTickets * childCost)}}</b></h5>
+    <h5>Transaction Fee: <b>${{informationService.getTransactionFee()}}</b></h5>
+    <h5>Total Cost: <b>${{getTotalCost()}}</b></h5>
   </div>
 </div>
 
@@ -33,6 +34,6 @@
   </div>
 
   <div class="col-xs-offset-8 col-xs-2">
-    INSERT PAY BUTTON HERE
+    <button class="btn btn-primary pull-right" type="submit" id="payButton">Pay Now</button>
   </div>
 </div>
