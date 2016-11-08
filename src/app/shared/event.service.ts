@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Event, Show } from './';
+import { Event, Show } from '../shared';
 
 @Injectable()
 export class EventService {

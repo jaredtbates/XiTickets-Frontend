@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Event } from '../../shows/shared';
-import { Seat } from './';
-import { Reservation } from '../../checkout/shared';
+import { Event, Reservation, Seat } from '../shared';
 
 @Injectable()
 export class ReservationService {

@@ -3,14 +3,13 @@ import { Component, OnInit } from '@angular/core';
 import { SessionStorage } from 'ng2-webstorage';
 import * as moment from 'moment';
 
-import { SeatsGuard } from '../seats';
-import { Show, Event, ShowService, EventService } from './shared';
+import { Show, Event, ShowService, EventService } from '../shared';
 
 @Component({
   selector: 'app-shows',
   templateUrl: 'shows.component.html',
-  styleUrls: [ 'shows.component.scss' ],
-  providers: [ ShowService, EventService ]
+  styleUrls: ['shows.component.scss'],
+  providers: [ShowService, EventService]
 })
 export class ShowsComponent implements OnInit {
   hovering: Show = null;

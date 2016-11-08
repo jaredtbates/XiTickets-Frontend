@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
 import { SessionStorage } from 'ng2-webstorage';
 
-import { Seat, SeatService, Row, ReservationService } from '../seats/shared';
-import { ShowService, Show, Event } from '../shows/shared';
-import { InformationService } from '../shared';
+import { Event, InformationService, Seat, ShowService, Show } from '../shared';
 
 declare let StripeCheckout: any;
 

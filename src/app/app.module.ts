@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { ShowsComponent } from './shows/shows.component';
 import { SeatsComponent } from './seats/seats.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   imports: [
@@ -28,7 +29,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
     AppComponent,
     ShowsComponent,
     SeatsComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    AdminComponent
   ],
   providers: [
     appRoutingProviders,

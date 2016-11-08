@@ -1,5 +1,4 @@
-import { Seat } from '../../seats/shared';
-import { Show, Event } from '../../shows/shared';
+import { Event, Seat, Show } from '../shared';
 
 export class Reservation {
   constructor(public id: string, public event: Event, public seats: Seat[], public purchaseDate: Date) { }

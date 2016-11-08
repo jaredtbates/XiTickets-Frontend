@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router'
-
 import { SessionStorage } from 'ng2-webstorage';
 
-import { Show, Event } from '../shows/shared';
+import { Show, Event } from '../shared';
 
 @Injectable()
 export class CheckoutGuard implements CanActivate {

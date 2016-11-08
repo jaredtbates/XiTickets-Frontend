@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Seat, Row } from './';
+import { Seat } from './';
 
 @Injectable()
 export class SeatService {
@@ -15,6 +15,10 @@ export class SeatService {
   getSeats(row: Row): Promise<Seat[]> {
     return Promise.resolve(SEATS.filter(seat => seat.row == row.id));
   }
+}
+
+export class Row {
+  constructor(public id: string, public seats: Seat[]) { }
 }
 
 // TODO: PULL FROM BACKEND REST API
