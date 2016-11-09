@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionStorage } from 'ng2-webstorage';
 
-import { Event, InformationService, Seat, ShowService, Show } from '../shared';
+import { Event, InformationService, Seat, ShowService, Show } from '../../shared';
 
 declare let StripeCheckout: any;
 

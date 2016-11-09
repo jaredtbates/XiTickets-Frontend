@@ -3,16 +3,12 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
 import { routing, appRoutingProviders } from './app.routing';
-
 import { Ng2BootstrapModule, ButtonsModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { Ng2Webstorage, KeyStorageHelper } from 'ng2-webstorage';
 
 import { AppComponent } from './app.component';
-import { ShowsComponent } from './shows/shows.component';
-import { SeatsComponent } from './seats/seats.component';
-import { CheckoutComponent } from './checkout/checkout.component';
+import * as Client from './client';
 import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
@@ -27,9 +23,9 @@ import { AdminComponent } from './admin/admin.component';
   ],
   declarations: [
     AppComponent,
-    ShowsComponent,
-    SeatsComponent,
-    CheckoutComponent,
+    Client.ShowsComponent,
+    Client.SeatsComponent,
+    Client.CheckoutComponent,
     AdminComponent
   ],
   providers: [

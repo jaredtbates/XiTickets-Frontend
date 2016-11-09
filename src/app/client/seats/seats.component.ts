@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionStorage } from 'ng2-webstorage';
 
-import { Reservation, ReservationService, Row, Seat, SeatService, Show, ShowService, Event } from '../shared';
+import { Reservation, ReservationService, Row, Seat, SeatService, Show, ShowService, Event } from '../../shared';
 
 @Component({
   selector: 'app-seats',

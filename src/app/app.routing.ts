@@ -1,19 +1,17 @@
 import { Routes, RouterModule } from '@angular/router';
 
-import { ShowsComponent } from './shows';
-import { SeatsComponent, SeatsGuard } from './seats';
-import { CheckoutComponent, CheckoutGuard } from './checkout';
+import * as Client from './client';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'shows', pathMatch: 'full' },
-  { path: 'shows', component: ShowsComponent },
-  { path: 'seats', component: SeatsComponent, canActivate: [ SeatsGuard ] },
-  { path: 'checkout', component: CheckoutComponent, canActivate: [ CheckoutGuard ] }
+  { path: 'shows', component: Client.ShowsComponent },
+  { path: 'seats', component: Client.SeatsComponent, canActivate: [ Client.SeatsGuard ] },
+  { path: 'checkout', component: Client.CheckoutComponent, canActivate: [ Client.CheckoutGuard ] }
 ];
 
 export let appRoutingProviders: any[] = [
-  SeatsGuard,
-  CheckoutGuard
+  Client.SeatsGuard,
+  Client.CheckoutGuard
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);

@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { SessionStorage } from 'ng2-webstorage';
 import * as moment from 'moment';
 
-import { Show, Event, ShowService, EventService } from '../shared';
+import { Show, Event, ShowService, EventService } from '../../shared';
 
 @Component({
   selector: 'app-shows',
