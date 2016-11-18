@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { LocalStorageService } from 'ng2-webstorage';
 import { environment } from '../environments/environment';
 import { InformationService } from './shared';
 
@@ -12,7 +11,7 @@ import './rxjs-operators';
   providers: [InformationService]
 })
 export class AppComponent {
-  constructor(private storageService: LocalStorageService, private informationService: InformationService) { }
+  constructor(private informationService: InformationService) { }
 
   isSecure() {
     return location.protocol === 'https:' || !environment.production;

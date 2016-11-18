@@ -1,33 +1,5 @@
 <div *ngIf="isSecure()" class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <header>
-        <div class="row">
-          <div class="col-xs-3 hidden-xs">
-            <a href="#" class="btn btn-default pull-left" role="button">Back to Home</a>
-          </div>
-
-          <div class="col-sm-6 col-xs-12">
-            <ol class="breadcrumb">
-              <li [routerLink]="['/shows']" [routerLinkActive]="['active']">Shows</li>
-              <li [routerLink]="['/seats']" [routerLinkActive]="['active']">Seats</li>
-              <li [routerLink]="['/checkout']" [routerLinkActive]="['active']">Checkout</li>
-            </ol>
-          </div>
-
-          <div class="col-xs-3 hidden-xs">
-            <img src="{{ informationService.getOrganizationLogoUrl() }}" alt="Logo" class="img-responsive pull-right" draggable="false">
-          </div>
-        </div>
-      </header>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-xs-12">
-      <router-outlet></router-outlet>
-    </div>
-  </div>
+  <router-outlet></router-outlet>
 </div>
 
 <div *ngIf="!isSecure()" class="container">

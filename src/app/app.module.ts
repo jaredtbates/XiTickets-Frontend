@@ -8,25 +8,19 @@ import { Ng2BootstrapModule, ButtonsModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { Ng2Webstorage, KeyStorageHelper } from 'ng2-webstorage';
 
 import { AppComponent } from './app.component';
-import * as Client from './client';
-import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
+  declarations: [
+    AppComponent
+  ],
   imports: [
     BrowserModule,
+    ButtonsModule,
     FormsModule,
     HttpModule,
-    routing,
     Ng2BootstrapModule,
-    ButtonsModule,
-    Ng2Webstorage
-  ],
-  declarations: [
-    AppComponent,
-    Client.ShowsComponent,
-    Client.SeatsComponent,
-    Client.CheckoutComponent,
-    AdminComponent
+    Ng2Webstorage,
+    routing
   ],
   providers: [
     appRoutingProviders,

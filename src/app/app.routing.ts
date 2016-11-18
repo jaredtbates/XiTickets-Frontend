@@ -1,17 +1,20 @@
 import { Routes, RouterModule } from '@angular/router';
 
-import * as Client from './client';
-
 const appRoutes: Routes = [
-  { path: '', redirectTo: 'shows', pathMatch: 'full' },
-  { path: 'shows', component: Client.ShowsComponent },
-  { path: 'seats', component: Client.SeatsComponent, canActivate: [ Client.SeatsGuard ] },
-  { path: 'checkout', component: Client.CheckoutComponent, canActivate: [ Client.CheckoutGuard ] }
+  {
+    path: '',
+    redirectTo: 'client',
+    pathMatch: 'full'
+  },
+  {
+    path: 'client',
+    loadChildren: 'app/client/client.module#ClientModule'
+  }
 ];
 
 export let appRoutingProviders: any[] = [
-  Client.SeatsGuard,
-  Client.CheckoutGuard
+  /*Client.SeatsGuard,
+  Client.CheckoutGuard*/
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);
