@@ -5,9 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { routing, appRoutingProviders } from './app.routing';
 import { Ng2BootstrapModule, ButtonsModule } from 'ng2-bootstrap/ng2-bootstrap';
-import { Ng2Webstorage, KeyStorageHelper } from 'ng2-webstorage';
+import { Ng2Webstorage } from 'ng2-webstorage';
 
 import { AppComponent } from './app.component';
+import { ClientModule } from './client/client.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     ButtonsModule,
+    ClientModule,
     FormsModule,
     HttpModule,
     Ng2BootstrapModule,

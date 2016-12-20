@@ -13,8 +13,7 @@ const appRoutes: Routes = [
 ];
 
 export let appRoutingProviders: any[] = [
-  /*Client.SeatsGuard,
-  Client.CheckoutGuard*/
+
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);
