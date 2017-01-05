@@ -5,8 +5,8 @@ import { Reservation, ReservationService, Row, Seat, SeatService, Show, ShowServ
 
 @Component({
   selector: 'app-seats',
-  templateUrl: 'seats.component.html',
-  styleUrls: ['seats.component.scss'],
+  templateUrl: './seats.component.html',
+  styleUrls: ['./seats.component.scss'],
   providers: [SeatService, ShowService, ReservationService]
 })
 export class SeatsComponent implements OnInit {

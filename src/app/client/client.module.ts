@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
-import { Ng2BootstrapModule, ButtonsModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { Ng2BootstrapModule, ButtonsModule } from 'ng2-bootstrap';
 
 import { ClientComponent } from './client.component';
 import { CheckoutComponent, ShowsComponent, SeatsComponent, routing } from './';
@@ -22,8 +22,6 @@ import { CheckoutComponent, ShowsComponent, SeatsComponent, routing } from './';
     ButtonsModule,
     routing
   ],
-  exports: [ClientComponent],
-  bootstrap: [ClientComponent],
-  entryComponents: [ClientComponent]
+  exports: [ClientComponent]
 })
 export class ClientModule { }

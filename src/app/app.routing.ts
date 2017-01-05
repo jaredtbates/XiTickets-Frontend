@@ -8,11 +8,13 @@ const appRoutes: Routes = [
   },
   {
     path: 'client',
-    loadChildren: 'app/client/client.module#ClientModule'
+    loadChildren: 'app/client/client.module#ClientModule',
+    pathMatch: 'prefix'
   },
   {
     path: '**',
-    redirectTo: 'client'
+    redirectTo: 'client',
+    pathMatch: 'prefix'
   }
 ];
 

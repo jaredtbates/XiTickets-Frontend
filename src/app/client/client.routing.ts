@@ -14,21 +14,25 @@ const clientRoutes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'shows'
+        redirectTo: 'shows',
+        pathMatch: 'full'
       },
       {
         path: 'shows',
-        component: ShowsComponent
+        component: ShowsComponent,
+        pathMatch: 'prefix'
       },
       {
         path: 'seats',
         component: SeatsComponent,
-        canActivate: [SeatsGuard]
+        canActivate: [SeatsGuard],
+        pathMatch: 'prefix'
       },
       {
         path: 'checkout',
         component: CheckoutComponent,
-        canActivate: [CheckoutGuard]
+        canActivate: [CheckoutGuard],
+        pathMatch: 'prefix'
       }
     ]
   },

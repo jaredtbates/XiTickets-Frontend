@@ -7,8 +7,8 @@ import { Show, Event, ShowService, EventService } from '../../shared';
 
 @Component({
   selector: 'app-shows',
-  templateUrl: 'shows.component.html',
-  styleUrls: ['shows.component.scss'],
+  templateUrl: './shows.component.html',
+  styleUrls: ['./shows.component.scss'],
   providers: [ShowService, EventService]
 })
 export class ShowsComponent implements OnInit {
