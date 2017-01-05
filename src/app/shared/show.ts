@@ -1,5 +1,5 @@
 export class Show {
-  id: number;
+  id: string;
   name: string;
   description: string;
   logoUrl: string;

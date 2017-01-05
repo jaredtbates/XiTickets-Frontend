@@ -1,47 +1,27 @@
 import { Injectable } from '@angular/core';
+import { Http, Response } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 
 import { Event, Show } from '../shared';
 
 @Injectable()
 export class EventService {
-  getEvents(): Promise<Event[]> {
-    return Promise.resolve(EVENTS);
+  constructor(private http: Http) { }
+
+  getEvents(show: Show): Observable<Event[]> {
+    return this.http.get('http://localhost:3000/api/shows/' + show.id + '/events').map(res => res.json()).catch(this.handleError);
   }
 
-  getEventsFromShow(show: Show): Promise<Event[]> {
-    return Promise.all(EVENTS.filter(event => event.showid === show.id));
+  private handleError (error: Response | any) {
+    let errMsg: string;
+    if (error instanceof Response) {
+      const body = error.json() || '';
+      const err = body.error || JSON.stringify(body);
+      errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
+    } else {
+      errMsg = error.message ? error.message : error.toString();
+    }
+    console.error(errMsg);
+    return Observable.throw(errMsg);
   }
 }
-
-// TODO: PULL FROM BACKEND REST API
-const EVENTS: Event[] = [
-  {
-    id: 1,
-    showid: 1,
-    date: new Date(2017, 1, 1, 15, 0, 0, 0)
-  }, {
-    id: 2,
-    showid: 2,
-    date: new Date(2017, 1, 1, 19, 0, 0, 0)
-  }, {
-    id: 3,
-    showid: 3,
-    date: new Date(2017, 1, 3, 19, 0, 0, 0)
-  }, {
-    id: 4,
-    showid: 1,
-    date: new Date(2017, 1, 2, 19, 0, 0, 0)
-  }, {
-    id: 5,
-    showid: 1,
-    date: new Date(2017, 1, 3, 19, 0, 0, 0)
-  }, {
-    id: 6,
-    showid: 1,
-    date: new Date(2017, 1, 4, 19, 0, 0, 0)
-  }, {
-    id: 7,
-    showid: 1,
-    date: new Date(2017, 1, 5, 19, 0, 0, 0)
-  }
-];

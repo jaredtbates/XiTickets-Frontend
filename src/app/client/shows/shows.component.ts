@@ -18,7 +18,6 @@ export class ShowsComponent implements OnInit {
   days: string[] = [];
   childCost: number = 3;
   adultCost: number = 5;
-  error: any;
 
   @SessionStorage() selectedShow: Show;
   @SessionStorage() selectedEvent: Event;
@@ -28,11 +27,12 @@ export class ShowsComponent implements OnInit {
   constructor(private showService: ShowService, private eventService: EventService) { }
 
   getShows(): void {
-    this.showService.getShows().subscribe(retrievedShows => this.shows = retrievedShows, error => this.error = error);
+    this.showService.getShows().subscribe(retrievedShows => this.shows = retrievedShows);
   }
 
   ngOnInit(): void {
     this.getShows();
+
     if (this.adultTickets == null && this.childTickets == null) {
       this.adultTickets = 0;
       this.childTickets = 0;
@@ -43,14 +43,23 @@ export class ShowsComponent implements OnInit {
 
   onShowClick(show: Show, resetEvent: boolean = true): void {
     this.selectedShow = show;
-    this.eventService.getEventsFromShow(show).then(events => {
-      this.events = events;
+
+    this.eventService.getEvents(show).subscribe(retrievedEvents => {
+      this.events = retrievedEvents;
       this.days = [];
+
       if (resetEvent) {
         this.selectedEvent = null;
       }
+
       this.events.forEach(event => {
-        let day: string = event.date.toDateString();
+        if (this.selectedEvent.id === event.id) {
+          // make events actually the same object, as JavaScript doesn't think they're equal unless we do this
+          this.selectedEvent = event;
+        }
+
+        let day: string = new Date(event.date).toDateString();
+
         if (this.days.indexOf(day) === -1) {
           this.days.push(day);
         }
@@ -60,11 +69,13 @@ export class ShowsComponent implements OnInit {
 
   getEventsOnDay(day: string): Event[] {
     let eventsOnDay: Event[] = [];
+
     this.events.forEach(event => {
-      if (event.date.toDateString() === day) {
+      if (new Date(event.date).toDateString() === day) {
         eventsOnDay.push(event);
       }
     });
+
     return eventsOnDay;
   }
 

@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { Ng2BootstrapModule, ButtonsModule } from 'ng2-bootstrap';
 
 import { ClientComponent } from './client.component';
-import { CheckoutComponent, ShowsComponent, SeatsComponent, routing } from './';
+import { CheckoutComponent, ShowsComponent, SeatsComponent, routing, clientRoutingProviders } from './';
 
 @NgModule({
   declarations: [
@@ -22,6 +22,9 @@ import { CheckoutComponent, ShowsComponent, SeatsComponent, routing } from './';
     ButtonsModule,
     routing
   ],
-  exports: [ClientComponent]
+  exports: [ClientComponent],
+  providers: [
+    clientRoutingProviders
+  ]
 })
 export class ClientModule { }

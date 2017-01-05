@@ -30,7 +30,7 @@
 
 <div class="row inside-footer">
   <div class="col-xs-2">
-    <a class="btn btn-default pull-left" role="button" [routerLink]="['/shows']">Go Back</a>
+    <a class="btn btn-default pull-left" role="button" [routerLink]="['/client/shows']">Go Back</a>
   </div>
 
   <div class="col-xs-8">
@@ -51,6 +51,6 @@
   </div>
 
   <div class="col-xs-2">
-    <a class="btn btn-primary pull-right" role="button" [routerLink]="['/checkout']" [class.disabled]="selectedSeats.length !== adultTickets + childTickets">Checkout</a>
+    <a class="btn btn-primary pull-right" role="button" [routerLink]="['/client/checkout']" [class.disabled]="selectedSeats.length !== adultTickets + childTickets">Checkout</a>
   </div>
 </div>
