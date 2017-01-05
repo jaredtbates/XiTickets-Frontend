@@ -9,6 +9,10 @@ const appRoutes: Routes = [
   {
     path: 'client',
     loadChildren: 'app/client/client.module#ClientModule'
+  },
+  {
+    path: '**',
+    redirectTo: 'client'
   }
 ];
 

@@ -8,5 +8,5 @@ import { InformationService } from '../shared';
   providers: [InformationService]
 })
 export class ClientComponent {
-  constructor(private informationService: InformationService) { };
+  constructor(private informationService: InformationService) { }
 }

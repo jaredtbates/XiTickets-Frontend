@@ -9,9 +9,13 @@ import { SeatsGuard } from './seats/seats-guard.service';
 
 const clientRoutes: Routes = [
   {
-    path: '',
+    path: 'client',
     component: ClientComponent,
     children: [
+      {
+        path: '',
+        redirectTo: 'shows'
+      },
       {
         path: 'shows',
         component: ShowsComponent
