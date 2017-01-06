@@ -27,7 +27,7 @@ export class SeatService {
   }
 
   private getSeats(): Observable<Seat[]> {
-    return this.http.get('http://localhost:3000/api/seats').map(res => res.json()).catch(this.handleError);
+    return this.http.get('http://localhost:3000/api/seats?filter[order]=column%20ASC').map(res => res.json()).catch(this.handleError);
   }
 
   private handleError (error: Response | any) {
