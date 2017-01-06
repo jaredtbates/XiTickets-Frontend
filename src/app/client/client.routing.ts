@@ -9,7 +9,7 @@ import { SeatsGuard } from './seats/seats-guard.service';
 
 const clientRoutes: Routes = [
   {
-    path: 'client',
+    path: '',
     component: ClientComponent,
     children: [
       {

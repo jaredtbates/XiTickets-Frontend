@@ -8,7 +8,6 @@ declare let StripeCheckout: any;
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
-  styleUrls: ['./checkout.component.scss'],
   providers: [InformationService]
 })
 export class CheckoutComponent implements OnInit {

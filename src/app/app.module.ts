@@ -8,7 +8,6 @@ import { Ng2BootstrapModule, ButtonsModule } from 'ng2-bootstrap';
 import { Ng2Webstorage } from 'ng2-webstorage';
 
 import { AppComponent } from './app.component';
-import { ClientModule } from './client/client.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +16,6 @@ import { ClientModule } from './client/client.module';
   imports: [
     BrowserModule,
     ButtonsModule,
-    ClientModule,
     FormsModule,
     HttpModule,
     Ng2BootstrapModule,

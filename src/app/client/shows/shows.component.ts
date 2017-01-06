@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { SessionStorage } from 'ng2-webstorage';
-import * as moment from 'moment';
-
 import { Show, Event, ShowService, EventService } from '../../shared';
+
+declare var moment: any;
 
 @Component({
   selector: 'app-shows',
@@ -53,7 +53,7 @@ export class ShowsComponent implements OnInit {
       }
 
       this.events.forEach(event => {
-        if (this.selectedEvent.id === event.id) {
+        if (this.selectedEvent && this.selectedEvent.id === event.id) {
           // make events actually the same object, as JavaScript doesn't think they're equal unless we do this
           this.selectedEvent = event;
         }

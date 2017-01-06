@@ -15,6 +15,7 @@ export class ReservationService {
 const RESERVATIONS: Reservation[] = [
   {
     id: 'B5A9CC',
+    event: { id: 'sdgdsjgdfsgh', showId: 'dshgsdgs', date: new Date(2017, 1, 1, 15, 0, 0, 0) },
     seats: [
       { id: 'H_11', row: 'H', column: 13, blanksToLeft: 0 },
       { id: 'H_9', row: 'H', column: 14, blanksToLeft: 0 },
@@ -23,7 +24,6 @@ const RESERVATIONS: Reservation[] = [
       { id: 'H_3', row: 'H', column: 17, blanksToLeft: 0 },
       { id: 'H_1', row: 'H', column: 18, blanksToLeft: 0 }
     ],
-    event: { id: 1, showid: 1, date: new Date(2017, 1, 1, 15, 0, 0, 0) },
     purchaseDate: new Date(2016, 11, 1, 0, 0, 0)
   }
 ];
