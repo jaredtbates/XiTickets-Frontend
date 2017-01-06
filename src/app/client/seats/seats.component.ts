@@ -18,14 +18,12 @@ export class SeatsComponent implements OnInit {
   @SessionStorage('selectedSeats') selectedSeatsString: string;
   selectedSeats: Seat[] = [];
   reservedSeats: Seat[] = [];
-  rows: Row[] = [];
   childCost: number = 3;
   adultCost: number = 5;
 
   constructor(private seatService: SeatService, private showService: ShowService, private reservationService: ReservationService) { }
 
   getSeats(): void {
-    this.seatService.getRows().then(rows => this.rows = rows);
     this.reservationService.getReservedSeats(this.selectedEvent).then(reservedSeats => this.reservedSeats = reservedSeats);
   }
 

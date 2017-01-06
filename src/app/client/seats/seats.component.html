@@ -15,7 +15,7 @@
       </div>
 
       <div id="seat-chart-rows">
-        <div *ngFor="let row of rows" class="row seat-row">
+        <div *ngFor="let row of seatService.rows" class="row seat-row">
           <div class="col-xs-12">
             <div *ngFor="let seat of row.seats" class="parent-seat">
               <div *ngFor="let blank of getBlanks(seat.blanksToLeft)" class="seat-space"></div>
