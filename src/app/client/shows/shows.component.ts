@@ -15,7 +15,7 @@ export class ShowsComponent implements OnInit {
   hovering: Show = null;
   shows: Show[];
   events: Event[];
-  days: string[] = [];
+  days: string[];
   childCost: number = 3;
   adultCost: number = 5;
 
@@ -43,6 +43,7 @@ export class ShowsComponent implements OnInit {
 
   onShowClick(show: Show, resetEvent: boolean = true): void {
     this.selectedShow = show;
+    this.days = null;
 
     this.eventService.getEvents(show).subscribe(retrievedEvents => {
       this.events = retrievedEvents;

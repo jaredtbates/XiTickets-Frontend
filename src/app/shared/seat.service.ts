@@ -9,17 +9,17 @@ export class SeatService {
   rows: Row[];
 
   constructor(private http: Http) {
-    this.getRows().subscribe(rows => {
-      this.rows = rows;
-
-      this.getSeats().subscribe(seats => rows.map(row => seats.filter(seat => seat.rowId === row.id).map(seat => {
-        console.log(row);
+    this.getRows().subscribe(rows => this.getSeats().subscribe(seats => {
+      rows.map(row => {
         if (!row.seats) {
           row.seats = [];
         }
-        row.seats.push(seat);
-      })));
-    });
+
+        seats.filter(seat => seat.rowId === row.id).map(seat => row.seats.push(seat));
+      });
+
+      this.rows = rows;
+    }));
   }
 
   private getRows(): Observable<Row[]> {
