@@ -9,7 +9,8 @@ export class ShowService {
   constructor(private http: Http) { }
 
   getShows(): Observable<Show[]> {
-    return this.http.get('http://localhost:3000/api/shows').map(res => res.json()).catch(this.handleError);
+    //return this.http.get('http://localhost:3000/api/shows').map(res => res.json()).catch(this.handleError);
+    return Observable.from([SHOWS]);
   }
 
   private handleError (error: Response | any) {
@@ -25,3 +26,15 @@ export class ShowService {
     return Observable.throw(errMsg);
   }
 }
+
+// REMOVE THIS
+const SHOWS: Show[] = [
+  {
+    name: "Example Show 1",
+    description: "testing 12345",
+    logoUrl: "https://placeholdit.imgix.net/~text?txtsize=35&txt=EXAMPLE%20SHOW&w=300&h=150",
+    adultCost: 10,
+    childCost: 8,
+    id: "581f8f58236cb9e831b6cd9e"
+  }
+]

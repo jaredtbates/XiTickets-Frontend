@@ -17,3 +17,13 @@ button:focus {
   max-height: 300px;
   overflow-y: auto;
 }
+
+.panel {
+  position: relative;
+}
+
+#single-show-summary {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}

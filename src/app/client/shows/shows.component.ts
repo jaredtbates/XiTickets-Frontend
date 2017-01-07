@@ -38,6 +38,9 @@ export class ShowsComponent implements OnInit {
       this.childTickets = 0;
     } else if (this.selectedShow != null) {
       this.onShowClick(this.selectedShow, false);
+    } else if (this.shows.length === 1) {
+      this.selectedShow = this.shows[0];
+      this.onShowClick(this.selectedShow, false);
     }
   }
 

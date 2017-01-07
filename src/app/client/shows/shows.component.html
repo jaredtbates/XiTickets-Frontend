@@ -11,7 +11,11 @@
   <div class="bounce3"></div>
 </div>
 
-<div class="row" *ngIf="shows">
+<div *ngIf="shows && shows.length === 0">
+  <h1>There are currently no shows available.</h1>
+</div>
+
+<div class="row" *ngIf="shows && shows.length > 1">
   <div class="col-sm-4 col-xs-6" *ngFor="let show of shows">
     <div class="panel panel-default show-selector" [class.panel-primary]="hovering === show" (mouseenter)="hovering = show"
       (mouseleave)="hovering = null" [class.show-selected]="selectedShow != null && selectedShow.id === show.id" (click)="onShowClick(show)">
@@ -21,6 +25,22 @@
         <h5>{{show.description}}</h5>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="row" *ngIf="shows && shows.length === 1">
+  <div class="col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="col-xs-6 text-right">
+          <img [src]="shows[0].logoUrl" [alt]="shows[0].name" draggable="false" class="img-responsive pull-right">
+        </div>
+
+        <div class="col-xs-6 text-left" id="single-show-summary">
+          <h3>{{shows[0].name}}</h3>
+          <h5>{{shows[0].description}}</h5>
+        </div>
+      </div>
   </div>
 </div>
 
