@@ -22,8 +22,7 @@ button:focus {
   position: relative;
 }
 
-#single-show-summary {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+.vertical-align {
+  display: flex;
+  align-items: center;
 }
