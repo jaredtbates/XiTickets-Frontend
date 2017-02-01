@@ -23,8 +23,7 @@ import { AppComponent } from './app.component';
     routing
   ],
   providers: [
-    appRoutingProviders,
-    { provide: LocationStrategy, useClass: HashLocationStrategy }
+    appRoutingProviders
   ],
   bootstrap: [AppComponent]
 })

@@ -12,8 +12,8 @@ const appRoutes: Routes = [
     pathMatch: 'prefix'
   },
   {
-    path: '**',
-    redirectTo: 'client',
+    path: 'admin',
+    loadChildren: 'app/admin/admin.module#AdminModule',
     pathMatch: 'prefix'
   }
 ];

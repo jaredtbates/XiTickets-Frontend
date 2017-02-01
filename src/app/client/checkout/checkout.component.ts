@@ -6,7 +6,7 @@ import { Event, InformationService, Seat, ShowService, Show } from '../../shared
 declare let StripeCheckout: any;
 
 @Component({
-  selector: 'app-checkout',
+  selector: 'app-client-checkout',
   templateUrl: './checkout.component.html',
   providers: [InformationService]
 })

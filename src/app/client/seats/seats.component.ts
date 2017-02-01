@@ -4,7 +4,7 @@ import { SessionStorage } from 'ng2-webstorage';
 import { Reservation, ReservationService, Row, Seat, SeatService, Show, ShowService, Event } from '../../shared';
 
 @Component({
-  selector: 'app-seats',
+  selector: 'app-client-seats',
   templateUrl: './seats.component.html',
   styleUrls: ['./seats.component.scss'],
   providers: [SeatService, ShowService, ReservationService]

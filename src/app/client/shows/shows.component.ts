@@ -6,7 +6,7 @@ import { Show, Event, ShowService, EventService } from '../../shared';
 declare var moment: any;
 
 @Component({
-  selector: 'app-shows',
+  selector: 'app-client-shows',
   templateUrl: './shows.component.html',
   styleUrls: ['./shows.component.scss'],
   providers: [ShowService, EventService]
@@ -27,7 +27,14 @@ export class ShowsComponent implements OnInit {
   constructor(private showService: ShowService, private eventService: EventService) { }
 
   getShows(): void {
-    this.showService.getShows().subscribe(retrievedShows => this.shows = retrievedShows);
+    this.showService.getShows().subscribe(retrievedShows => {
+      this.shows = retrievedShows;
+
+      if (this.shows.length === 1) {
+        this.selectedShow = this.shows[0];
+        this.onShowClick(this.selectedShow, false);
+      }
+    });
   }
 
   ngOnInit(): void {
@@ -37,9 +44,6 @@ export class ShowsComponent implements OnInit {
       this.adultTickets = 0;
       this.childTickets = 0;
     } else if (this.selectedShow != null) {
-      this.onShowClick(this.selectedShow, false);
-    } else if (this.shows.length === 1) {
-      this.selectedShow = this.shows[0];
       this.onShowClick(this.selectedShow, false);
     }
   }
