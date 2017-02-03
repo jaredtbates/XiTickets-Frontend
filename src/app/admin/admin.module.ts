@@ -7,20 +7,23 @@ import { Ng2BootstrapModule } from 'ng2-bootstrap';
 import { routing, adminRoutingProviders } from './admin.routing';
 
 import { AdminComponent } from './admin.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
-    AdminComponent
+    AdminComponent,
+    DashboardComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     HttpModule,
-    Ng2BootstrapModule
+    Ng2BootstrapModule,
+    routing
   ],
+  exports: [AdminComponent],
   providers: [
     adminRoutingProviders
-  ],
-  bootstrap: [AdminComponent]
+  ]
 })
 export class AdminModule { }
